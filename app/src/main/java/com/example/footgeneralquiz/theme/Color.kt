@@ -1,4 +1,4 @@
-package com.example.footgeneralquiz.ui.theme
+package com.example.footgeneralquiz.theme
 
 import androidx.compose.ui.graphics.Color
 
