@@ -1,4 +1,4 @@
-package com.example.footgeneralquiz.ui.theme
+package com.example.footgeneralquiz.theme
 
 import android.app.Activity
 import android.os.Build
