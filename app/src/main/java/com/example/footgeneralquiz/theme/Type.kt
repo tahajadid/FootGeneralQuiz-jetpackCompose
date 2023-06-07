@@ -8,7 +8,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.example.footgeneralquiz.R
 
+// Balloon Font
 val BalloonFontFamily = FontFamily(
+    listOf(
+        Font(R.font.bronten, FontWeight.Normal),
+        Font(R.font.bronten_bold, FontWeight.Bold)
+    )
+)
+
+// Challenge Font
+val ChallengeFontFamily = FontFamily(
     listOf(
         Font(R.font.challenge_shadow)
     )

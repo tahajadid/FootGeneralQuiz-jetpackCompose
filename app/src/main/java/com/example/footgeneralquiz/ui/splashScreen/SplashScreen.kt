@@ -39,6 +39,7 @@ import androidx.navigation.NavController
 import com.example.footgeneralquiz.R
 import com.example.footgeneralquiz.navigation.Screen
 import com.example.footgeneralquiz.theme.Blue1
+import com.example.footgeneralquiz.theme.ChallengeFontFamily
 import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
 import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green4
@@ -117,7 +118,8 @@ fun Splash() {
             modifier = Modifier.fillMaxWidth().padding(vertical = 0.dp, horizontal = 20.dp),
             textAlign = TextAlign.Center,
             letterSpacing = 4.sp,
-            lineHeight = 36.sp
+            lineHeight = 36.sp,
+            fontFamily = ChallengeFontFamily
         )
     }
 }
