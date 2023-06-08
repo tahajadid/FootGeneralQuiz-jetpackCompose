@@ -12,7 +12,7 @@ object Constants {
         Choice(3, "Champions League AF", "", false),
         Choice(4, "Players", "", false),
         Choice(5, "Flags", "", false),
-        Choice(6, "", "", false),
+        Choice(6, "Awards", "", false),
         Choice(7, "Diverse", "", false)
     )
 

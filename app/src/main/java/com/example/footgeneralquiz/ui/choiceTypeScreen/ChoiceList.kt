@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.sp
 import com.example.footgeneralquiz.R
 import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
 import com.example.footgeneralquiz.theme.Green1
+import com.example.footgeneralquiz.util.Constants.LIST_OF_CHOICES
 
 @Composable
 fun ChoiceList(messages: List<String>) {
@@ -53,7 +54,7 @@ fun LazyVerticalGridDemo() {
             bottom = 6.dp
         ),
         content = {
-            items(list.size) { index ->
+            items(LIST_OF_CHOICES.size) { index ->
                 Card(
                     modifier = Modifier
                         .padding(4.dp)
@@ -79,9 +80,9 @@ fun LazyVerticalGridDemo() {
                         )
 
                         Text(
-                            text = list[index],
+                            text = LIST_OF_CHOICES[index].title.toString(),
                             fontWeight = FontWeight.Bold,
-                            fontSize = 30.sp,
+                            fontSize = 20.sp,
                             color = Color(0xFFFFFFFF),
                             textAlign = TextAlign.Center,
                             modifier = Modifier.padding(16.dp)
