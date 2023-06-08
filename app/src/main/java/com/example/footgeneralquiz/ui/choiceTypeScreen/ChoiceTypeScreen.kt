@@ -1,19 +1,23 @@
 package com.example.footgeneralquiz.ui.choiceTypeScreen
 
 import android.content.res.Configuration
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.platform.LocalDensity
@@ -25,8 +29,10 @@ import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.Dimension
 import androidx.navigation.NavController
 import com.example.footgeneralquiz.R
+import com.example.footgeneralquiz.theme.Blue1
 import com.example.footgeneralquiz.theme.Blue2
 import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
+import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green2
 import com.example.footgeneralquiz.theme.Green3
 import com.example.footgeneralquiz.util.supportWideScreen
@@ -101,6 +107,23 @@ fun ChoiceType() {
             )
         }
 
+        Card(
+            modifier = Modifier
+                .layoutId("headerBox")
+                .fillMaxWidth(1f)
+                .fillMaxHeight(0.1f),
+            shape = RoundedCornerShape(
+                topStart = 0.dp,
+                topEnd = 0.dp,
+                bottomEnd = 20.dp,
+                bottomStart = 20.dp
+            ),
+            colors = CardDefaults.cardColors(
+                containerColor = Green1
+            )
+        ) {}
+
+        /*
         // headerBox
         Box(
             modifier = Modifier
@@ -110,6 +133,8 @@ fun ChoiceType() {
                 .fillMaxHeight(0.1f)
         ) {
         }
+
+         */
 
         // listBox
         Box(

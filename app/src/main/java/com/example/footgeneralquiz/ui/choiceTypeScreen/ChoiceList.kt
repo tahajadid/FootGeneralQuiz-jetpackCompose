@@ -4,7 +4,6 @@ import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -15,6 +14,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.footgeneralquiz.R
 import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
+import com.example.footgeneralquiz.theme.Green1
 
 @Composable
 fun ChoiceList(messages: List<String>) {
@@ -47,7 +48,7 @@ fun LazyVerticalGridDemo() {
         // content padding
         contentPadding = PaddingValues(
             start = 6.dp,
-            top = 16.dp,
+            top = 6.dp,
             end = 12.dp,
             bottom = 6.dp
         ),
@@ -59,13 +60,21 @@ fun LazyVerticalGridDemo() {
                         .fillMaxWidth(),
                     elevation = CardDefaults.cardElevation(
                         defaultElevation = 10.dp
+                    ),
+                    colors = CardDefaults.cardColors(
+                        containerColor = Green1
                     )
                 ) {
-                    Column(modifier = Modifier.fillMaxSize()) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(top = 8.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
                         Image(
-                            painter = painterResource(id = R.drawable.bottom_main_bg),
+                            painter = painterResource(id = R.drawable.worldcup),
                             contentDescription = null,
-                            contentScale = ContentScale.Crop,
+                            contentScale = ContentScale.Fit,
                             modifier = Modifier.height(120.dp)
                         )
 
