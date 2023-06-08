@@ -3,7 +3,7 @@ package com.example.footgeneralquiz.util
 import com.example.footgeneralquiz.data.Choice
 import com.example.footgeneralquiz.data.Level
 
-class Constants {
+object Constants {
 
     var LIST_OF_CHOICES = arrayListOf(
         Choice(0, "World Cup", "", false),
