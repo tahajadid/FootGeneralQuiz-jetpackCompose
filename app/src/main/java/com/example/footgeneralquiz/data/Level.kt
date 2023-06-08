@@ -1,4 +1,6 @@
 package com.example.footgeneralquiz.data
 
-class Level {
-}
+data class Level(
+    var idLevel: String? = null,
+    var title: String? = null
+)
