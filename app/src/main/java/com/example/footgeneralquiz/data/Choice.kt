@@ -1,4 +1,8 @@
 package com.example.footgeneralquiz.data
 
-class Choice {
-}
+data class Choice(
+    var idChoice: String? = null,
+    var title: String? = null,
+    var icon: String? = null,
+    var isSelected: Boolean = false
+)
