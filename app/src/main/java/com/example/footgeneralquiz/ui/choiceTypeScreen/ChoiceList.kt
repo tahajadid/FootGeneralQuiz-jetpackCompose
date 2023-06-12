@@ -31,20 +31,8 @@ import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.util.Constants.LIST_OF_CHOICES
 
 @Composable
-fun ChoiceList(messages: List<String>) {
-    Column {
-        messages.forEach { message ->
-            Text(text = message)
-        }
-    }
-}
-
-@Composable
-fun LazyVerticalGridDemo(selectedItem: (Int) -> Unit) {
-    val list = (1..20).map { it.toString() }
-
+fun ChoiceList(selectedItem: (Int) -> Unit) {
     LazyVerticalGrid(
-        // columns = GridCells.Adaptive(128.dp),
         columns = GridCells.Fixed(2),
 
         // content padding
@@ -97,15 +85,10 @@ fun LazyVerticalGridDemo(selectedItem: (Int) -> Unit) {
     )
 }
 
-@Composable
-fun ChoiceItem() {
-    Text(text = "message")
-}
-
 @Preview(name = "Welcome light theme", uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun WelcomeSceeePreview() {
     FootGeneralQuizTheme {
-        // LazyVerticalGridDemo()
+        // ChoiceList()
     }
 }
