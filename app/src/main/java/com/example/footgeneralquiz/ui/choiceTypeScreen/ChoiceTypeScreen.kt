@@ -25,6 +25,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.Dimension
 import androidx.navigation.NavController
+import com.example.footgeneralquiz.MainActivity
 import com.example.footgeneralquiz.R
 import com.example.footgeneralquiz.navigation.Screen
 import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
@@ -150,6 +151,6 @@ fun ChoiceType(navController: NavController) {
 @Composable
 fun WelcomeScreenPreview() {
     FootGeneralQuizTheme {
-        // ChoiceType()
+        ChoiceType(NavController(MainActivity.activityInstance))
     }
 }

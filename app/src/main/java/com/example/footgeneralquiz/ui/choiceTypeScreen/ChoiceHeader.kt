@@ -79,6 +79,6 @@ fun ChoiceHeader(
 @Composable
 fun WelcomeSceePreview() {
     FootGeneralQuizTheme {
-        ChoiceHeader("d", "1/2")
+        ChoiceHeader("Welcome", "1/2")
     }
 }
