@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.footgeneralquiz.ui.choiceTypeScreen.ChoiceTypeScreen
 import com.example.footgeneralquiz.ui.splashScreen.SplashScreen
+import com.example.footgeneralquiz.ui.surveyScreen.SurveyScreen
 
 @Composable
 fun Navigation() {
@@ -20,6 +21,10 @@ fun Navigation() {
 
         composable(route = Screen.ChoiceTypeScreen.route) {
             ChoiceTypeScreen(navController = navController)
+        }
+
+        composable(route = Screen.SurveyScreen.route) {
+            SurveyScreen(navController = navController)
         }
 
         /*
