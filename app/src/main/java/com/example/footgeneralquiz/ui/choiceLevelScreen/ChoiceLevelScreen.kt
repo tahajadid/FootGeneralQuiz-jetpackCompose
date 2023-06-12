@@ -122,7 +122,7 @@ fun ChoiceLevel(navController: NavController) {
                 containerColor = Green1
             )
         ) {
-            ChoiceHeader("Choose type of the game", "1/2")
+            ChoiceHeader("Choose The Level", "2/2")
         }
 
         // listBox
