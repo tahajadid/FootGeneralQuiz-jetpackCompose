@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.footgeneralquiz.ui.choiceLevelScreen.ChoiceLevelScreen
 import com.example.footgeneralquiz.ui.choiceTypeScreen.ChoiceTypeScreen
 import com.example.footgeneralquiz.ui.splashScreen.SplashScreen
 import com.example.footgeneralquiz.ui.surveyScreen.SurveyScreen
@@ -21,6 +22,10 @@ fun Navigation() {
 
         composable(route = Screen.ChoiceTypeScreen.route) {
             ChoiceTypeScreen(navController = navController)
+        }
+
+        composable(route = Screen.ChoiceLevelScreen.route) {
+            ChoiceLevelScreen(navController = navController)
         }
 
         composable(route = Screen.SurveyScreen.route) {

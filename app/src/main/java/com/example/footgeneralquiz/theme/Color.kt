@@ -10,3 +10,4 @@ val Blue1 = Color(0xFF005155)
 val Blue2 = Color(0xFF003436)
 
 val Gold = Color(0xFFFFD700)
+val Gold2 = Color(0xFFDAA520)
