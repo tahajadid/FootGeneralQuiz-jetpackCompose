@@ -1,7 +1,6 @@
 package com.example.footgeneralquiz.ui.choiceTypeScreen
 
 import android.content.res.Configuration
-import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -118,7 +117,9 @@ fun ChoiceType(navController: NavController) {
             colors = CardDefaults.cardColors(
                 containerColor = Green1
             )
-        ) {}
+        ) {
+            ChoiceHeader("Choose type of the game","1/2")
+        }
 
         // listBox
         Box(
@@ -128,8 +129,7 @@ fun ChoiceType(navController: NavController) {
                 .fillMaxHeight(0.8f)
 
         ) {
-            LazyVerticalGridDemo() {
-                Log.d("Tests", "test : $it")
+            ChoiceList() {
                 navController.navigate(Screen.SurveyScreen.route)
             }
         }
@@ -150,6 +150,6 @@ fun ChoiceType(navController: NavController) {
 @Composable
 fun WelcomeScreenPreview() {
     FootGeneralQuizTheme {
-        //ChoiceType()
+        // ChoiceType()
     }
 }
