@@ -1,7 +1,7 @@
 package com.example.footgeneralquiz.ui.choiceTypeScreen
 
 import android.content.res.Configuration
-import androidx.compose.foundation.BorderStroke
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -11,13 +11,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.platform.LocalDensity
@@ -29,8 +27,7 @@ import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.Dimension
 import androidx.navigation.NavController
 import com.example.footgeneralquiz.R
-import com.example.footgeneralquiz.theme.Blue1
-import com.example.footgeneralquiz.theme.Blue2
+import com.example.footgeneralquiz.navigation.Screen
 import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
 import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green2
@@ -40,12 +37,12 @@ import com.example.footgeneralquiz.util.supportWideScreen
 @Composable
 fun ChoiceTypeScreen(navController: NavController) {
     Surface(modifier = Modifier.supportWideScreen()) {
-        ChoiceType()
+        ChoiceType(navController)
     }
 }
 
 @Composable
-fun ChoiceType() {
+fun ChoiceType(navController: NavController) {
     val constraints = ConstraintSet {
         val headerBox = createRefFor("headerBox")
         val listBox = createRefFor("listBox")
@@ -123,19 +120,6 @@ fun ChoiceType() {
             )
         ) {}
 
-        /*
-        // headerBox
-        Box(
-            modifier = Modifier
-                .background(Blue2)
-                .layoutId("headerBox")
-                .fillMaxWidth(1f)
-                .fillMaxHeight(0.1f)
-        ) {
-        }
-
-         */
-
         // listBox
         Box(
             modifier = Modifier
@@ -144,7 +128,10 @@ fun ChoiceType() {
                 .fillMaxHeight(0.8f)
 
         ) {
-            LazyVerticalGridDemo()
+            LazyVerticalGridDemo() {
+                Log.d("Tests", "test : $it")
+                navController.navigate(Screen.SurveyScreen.route)
+            }
         }
 
         // footerBox
@@ -163,6 +150,6 @@ fun ChoiceType() {
 @Composable
 fun WelcomeScreenPreview() {
     FootGeneralQuizTheme {
-        ChoiceType()
+        //ChoiceType()
     }
 }

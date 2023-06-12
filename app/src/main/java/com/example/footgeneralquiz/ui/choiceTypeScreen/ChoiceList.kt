@@ -2,6 +2,7 @@ package com.example.footgeneralquiz.ui.choiceTypeScreen
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,6 +28,7 @@ import androidx.compose.ui.unit.sp
 import com.example.footgeneralquiz.R
 import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
 import com.example.footgeneralquiz.theme.Green1
+import com.example.footgeneralquiz.util.Constants.LIST_OF_CHOICES
 
 @Composable
 fun ChoiceList(messages: List<String>) {
@@ -38,7 +40,7 @@ fun ChoiceList(messages: List<String>) {
 }
 
 @Composable
-fun LazyVerticalGridDemo() {
+fun LazyVerticalGridDemo(selectedItem: (Int) -> Unit) {
     val list = (1..20).map { it.toString() }
 
     LazyVerticalGrid(
@@ -53,11 +55,13 @@ fun LazyVerticalGridDemo() {
             bottom = 6.dp
         ),
         content = {
-            items(list.size) { index ->
+            items(LIST_OF_CHOICES.size) { index ->
                 Card(
                     modifier = Modifier
                         .padding(4.dp)
-                        .fillMaxWidth(),
+                        .fillMaxWidth()
+                        .clickable { selectedItem(index + 1) },
+
                     elevation = CardDefaults.cardElevation(
                         defaultElevation = 10.dp
                     ),
@@ -79,9 +83,9 @@ fun LazyVerticalGridDemo() {
                         )
 
                         Text(
-                            text = list[index],
+                            text = LIST_OF_CHOICES[index].title.toString(),
                             fontWeight = FontWeight.Bold,
-                            fontSize = 30.sp,
+                            fontSize = 20.sp,
                             color = Color(0xFFFFFFFF),
                             textAlign = TextAlign.Center,
                             modifier = Modifier.padding(16.dp)
@@ -102,6 +106,6 @@ fun ChoiceItem() {
 @Composable
 fun WelcomeSceeePreview() {
     FootGeneralQuizTheme {
-        LazyVerticalGridDemo()
+        // LazyVerticalGridDemo()
     }
 }
