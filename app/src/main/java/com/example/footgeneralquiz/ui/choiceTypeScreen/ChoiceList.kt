@@ -2,6 +2,7 @@ package com.example.footgeneralquiz.ui.choiceTypeScreen
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -39,7 +40,7 @@ fun ChoiceList(messages: List<String>) {
 }
 
 @Composable
-fun LazyVerticalGridDemo() {
+fun LazyVerticalGridDemo(selectedItem: (Int) -> Unit) {
     val list = (1..20).map { it.toString() }
 
     LazyVerticalGrid(
@@ -58,7 +59,9 @@ fun LazyVerticalGridDemo() {
                 Card(
                     modifier = Modifier
                         .padding(4.dp)
-                        .fillMaxWidth(),
+                        .fillMaxWidth()
+                        .clickable { selectedItem(index + 1) },
+
                     elevation = CardDefaults.cardElevation(
                         defaultElevation = 10.dp
                     ),
@@ -103,6 +106,6 @@ fun ChoiceItem() {
 @Composable
 fun WelcomeSceeePreview() {
     FootGeneralQuizTheme {
-        LazyVerticalGridDemo()
+        // LazyVerticalGridDemo()
     }
 }
