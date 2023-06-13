@@ -1,4 +1,4 @@
-package com.example.footgeneralquiz.ui.choiceTypeScreen
+package com.example.footgeneralquiz.ui.choice.choiceTypeScreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable

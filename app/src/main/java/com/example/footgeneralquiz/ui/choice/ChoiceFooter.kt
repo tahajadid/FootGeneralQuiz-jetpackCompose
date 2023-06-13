@@ -1,4 +1,4 @@
-package com.example.footgeneralquiz.ui.choiceTypeScreen
+package com.example.footgeneralquiz.ui.choice
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image

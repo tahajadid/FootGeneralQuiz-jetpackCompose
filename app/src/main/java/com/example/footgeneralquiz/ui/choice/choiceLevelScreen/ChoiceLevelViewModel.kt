@@ -1,4 +1,4 @@
-package com.example.footgeneralquiz.ui.choiceLevelScreen
+package com.example.footgeneralquiz.ui.choice.choiceLevelScreen
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
