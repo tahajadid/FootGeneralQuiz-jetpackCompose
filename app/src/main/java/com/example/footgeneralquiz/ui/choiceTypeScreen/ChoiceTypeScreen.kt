@@ -142,8 +142,7 @@ fun ChoiceType(navController: NavController) {
                 .fillMaxWidth(1f)
                 .fillMaxHeight(0.1f)
 
-        ) {
-        }
+        )
     }
 }
 

@@ -6,12 +6,13 @@ import com.example.footgeneralquiz.data.Level
 
 class ChoiceLevelViewModel : ViewModel() {
 
-    // level response
+    /**
+     * Variables
+     */
     private val _levelResponse = mutableStateOf<Level?>(null)
     val levelResponse: Level?
         get() = _levelResponse.value
 
-    // next button
     private val _isStartEnabled = mutableStateOf(false)
     val isStartEnabled: Boolean
         get() = _isStartEnabled.value

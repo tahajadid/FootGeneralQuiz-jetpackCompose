@@ -29,6 +29,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.footgeneralquiz.MainActivity
 import com.example.footgeneralquiz.R
+import com.example.footgeneralquiz.navigation.Screen
 import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
 import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green2
@@ -149,7 +150,9 @@ fun ChoiceLevel(navController: NavController) {
                 .fillMaxHeight(0.1f)
 
         ) {
-            ChoiceFooter({}, viewModel.isStartEnabled)
+            ChoiceFooter({
+                navController.navigate(Screen.SplashScreen.route)
+            }, viewModel.isStartEnabled)
         }
     }
 }
