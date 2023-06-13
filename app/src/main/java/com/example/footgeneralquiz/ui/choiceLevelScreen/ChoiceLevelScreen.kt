@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -32,6 +33,7 @@ import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
 import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green2
 import com.example.footgeneralquiz.theme.Green3
+import com.example.footgeneralquiz.ui.choiceTypeScreen.ChoiceFooter
 import com.example.footgeneralquiz.ui.choiceTypeScreen.ChoiceHeader
 import com.example.footgeneralquiz.util.supportWideScreen
 
@@ -147,6 +149,7 @@ fun ChoiceLevel(navController: NavController) {
                 .fillMaxHeight(0.1f)
 
         ) {
+            ChoiceFooter({}, viewModel.isStartEnabled)
         }
     }
 }
