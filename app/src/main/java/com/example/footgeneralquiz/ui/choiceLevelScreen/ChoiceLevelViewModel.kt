@@ -12,16 +12,16 @@ class ChoiceLevelViewModel : ViewModel() {
         get() = _levelResponse.value
 
     // next button
-    private val _isNextEnabled = mutableStateOf(false)
-    val isNextEnabled: Boolean
-        get() = _isNextEnabled.value
+    private val _isStartEnabled = mutableStateOf(false)
+    val isStartEnabled: Boolean
+        get() = _isStartEnabled.value
 
     /**
      * Function implementation
      */
     fun onLevelResponse(level: Level) {
         _levelResponse.value = level
-        _isNextEnabled.value = getIsNextEnabled()
+        _isStartEnabled.value = getIsNextEnabled()
     }
 
     private fun getIsNextEnabled(): Boolean {

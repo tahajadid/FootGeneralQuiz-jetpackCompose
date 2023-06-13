@@ -1,6 +1,7 @@
 package com.example.footgeneralquiz.ui.choiceLevelScreen
 
 import android.content.res.Configuration
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -13,6 +14,7 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -82,6 +84,14 @@ fun LevelItemView(
             containerColor =
             if (selectedAnswer) {
                 Green1
+            } else {
+                Green2
+            }
+        ),
+        border = BorderStroke(
+            width = 2.dp,
+            color = if (selectedAnswer) {
+                Green2
             } else {
                 Green2
             }
