@@ -61,7 +61,7 @@ fun ChoiceList(selectedItem: (Int) -> Unit) {
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Image(
-                            painter = painterResource(id = R.drawable.worldcup),
+                            painter = painterResource(id = getImageType(LIST_OF_CHOICES[index].icon)),
                             contentDescription = null,
                             contentScale = ContentScale.Fit,
                             modifier = Modifier.height(120.dp)
@@ -80,4 +80,21 @@ fun ChoiceList(selectedItem: (Int) -> Unit) {
             }
         }
     )
+}
+
+/**
+ * function to get the right image from assets
+ */
+fun getImageType(id: String?): Int {
+    when (id) {
+        "WORLD_CUP" -> return R.drawable.worldcup
+        "TEAMS" -> return R.drawable.worldcup
+        "LEAGUE_EU" -> return R.drawable.worldcup
+        "LEAGUE_AF" -> return R.drawable.worldcup
+        "PLAYERS" -> return R.drawable.worldcup
+        "FLAGS" -> return R.drawable.worldcup
+        "AWARDS" -> return R.drawable.worldcup
+        "VARIOUS" -> return R.drawable.worldcup
+        else -> return R.drawable.worldcup
+    }
 }
