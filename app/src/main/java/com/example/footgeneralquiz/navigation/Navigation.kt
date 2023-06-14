@@ -6,8 +6,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.footgeneralquiz.ui.choice.choiceLevelScreen.ChoiceLevelScreen
 import com.example.footgeneralquiz.ui.choice.choiceTypeScreen.ChoiceTypeScreen
-import com.example.footgeneralquiz.ui.splashScreen.SplashScreen
-import com.example.footgeneralquiz.ui.surveyScreen.SurveyScreen
+import com.example.footgeneralquiz.ui.splash.SplashScreen
+import com.example.footgeneralquiz.ui.survey.SurveyRoute
 
 @Composable
 fun Navigation() {
@@ -29,7 +29,12 @@ fun Navigation() {
         }
 
         composable(route = Screen.SurveyScreen.route) {
-            SurveyScreen(navController = navController)
+            SurveyRoute(
+                onSurveyComplete = {
+                    // navController.navigate(SURVEY_RESULTS_ROUTE)
+                },
+                onNavUp = navController::navigateUp
+            )
         }
 
         /*
