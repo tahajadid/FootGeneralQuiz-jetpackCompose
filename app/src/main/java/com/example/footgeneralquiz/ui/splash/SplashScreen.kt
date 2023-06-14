@@ -1,4 +1,4 @@
-package com.example.footgeneralquiz.ui.splashScreen
+package com.example.footgeneralquiz.ui.splash
 
 import android.content.res.Configuration
 import androidx.compose.animation.AnimatedVisibility
