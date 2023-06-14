@@ -1,4 +1,4 @@
-package com.example.footgeneralquiz.ui.choiceTypeScreen
+package com.example.footgeneralquiz.ui.choice.choiceLevelScreen
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.Dimension
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.footgeneralquiz.MainActivity
 import com.example.footgeneralquiz.R
@@ -32,17 +33,21 @@ import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
 import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green2
 import com.example.footgeneralquiz.theme.Green3
+import com.example.footgeneralquiz.ui.choice.ChoiceFooter
+import com.example.footgeneralquiz.ui.choice.ChoiceHeader
 import com.example.footgeneralquiz.util.supportWideScreen
 
 @Composable
-fun ChoiceTypeScreen(navController: NavController) {
+fun ChoiceLevelScreen(navController: NavController) {
     Surface(modifier = Modifier.supportWideScreen()) {
-        ChoiceType(navController)
+        ChoiceLevel(navController)
     }
 }
 
 @Composable
-fun ChoiceType(navController: NavController) {
+fun ChoiceLevel(navController: NavController) {
+    val viewModel: ChoiceLevelViewModel = viewModel()
+
     val constraints = ConstraintSet {
         val headerBox = createRefFor("headerBox")
         val listBox = createRefFor("listBox")
@@ -119,7 +124,7 @@ fun ChoiceType(navController: NavController) {
                 containerColor = Green1
             )
         ) {
-            ChoiceHeader("Choose Type Of The Game", "1/2")
+            ChoiceHeader("Choose The Level", "2/2")
         }
 
         // listBox
@@ -130,9 +135,10 @@ fun ChoiceType(navController: NavController) {
                 .fillMaxHeight(0.8f)
 
         ) {
-            ChoiceList() {
-                navController.navigate(Screen.ChoiceLevelScreen.route)
-            }
+            LevelList(
+                onItemSelected = viewModel::onLevelResponse,
+                selectedLevel = viewModel.levelResponse
+            )
         }
 
         // footerBox
@@ -142,7 +148,11 @@ fun ChoiceType(navController: NavController) {
                 .fillMaxWidth(1f)
                 .fillMaxHeight(0.1f)
 
-        )
+        ) {
+            ChoiceFooter({
+                navController.navigate(Screen.SplashScreen.route)
+            }, viewModel.isStartEnabled)
+        }
     }
 }
 
@@ -150,6 +160,6 @@ fun ChoiceType(navController: NavController) {
 @Composable
 fun WelcomeScreenPreview() {
     FootGeneralQuizTheme {
-        ChoiceType(NavController(MainActivity.activityInstance))
+        ChoiceLevel(NavController(MainActivity.activityInstance))
     }
 }

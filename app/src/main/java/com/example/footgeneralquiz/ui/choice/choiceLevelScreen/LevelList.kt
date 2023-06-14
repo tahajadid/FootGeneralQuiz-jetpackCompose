@@ -1,4 +1,4 @@
-package com.example.footgeneralquiz.ui.choiceLevelScreen
+package com.example.footgeneralquiz.ui.choice.choiceLevelScreen
 
 import android.content.res.Configuration
 import androidx.compose.foundation.BorderStroke
