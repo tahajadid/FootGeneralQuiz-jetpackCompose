@@ -8,7 +8,8 @@ object ListOfQuestions {
     var POSSIBLE_ANSWERS = listOf(
         PossibleAnswer(0, "Level 1"),
         PossibleAnswer(1, "Level 2"),
-        PossibleAnswer(2, "Level 3")
+        PossibleAnswer(2, "Level 3"),
+        PossibleAnswer(3, "Level 4")
     )
 
     var QUESTION_TEST = Question(
