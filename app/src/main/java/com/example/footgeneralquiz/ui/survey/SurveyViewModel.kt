@@ -9,8 +9,8 @@ import com.example.footgeneralquiz.data.PossibleAnswer
 class SurveyViewModel() : ViewModel() {
 
     private val questionOrder: List<SurveyQuestion> = listOf(
-        SurveyQuestion.FREE_TIME,
         SurveyQuestion.SUPERHERO,
+        SurveyQuestion.FREE_TIME,
         SurveyQuestion.LAST_TAKEAWAY,
         SurveyQuestion.FEELING_ABOUT_SELFIES,
         SurveyQuestion.TAKE_SELFIE
@@ -134,8 +134,8 @@ class SurveyViewModel() : ViewModel() {
 }
 
 enum class SurveyQuestion {
-    FREE_TIME,
     SUPERHERO,
+    FREE_TIME,
     LAST_TAKEAWAY,
     FEELING_ABOUT_SELFIES,
     TAKE_SELFIE,
