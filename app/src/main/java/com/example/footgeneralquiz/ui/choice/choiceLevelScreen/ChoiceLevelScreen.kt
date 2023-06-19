@@ -150,9 +150,17 @@ fun ChoiceLevel(navController: NavController) {
                 .fillMaxHeight(0.1f)
 
         ) {
-            ChoiceFooter({
-                navController.navigate(Screen.SurveyScreen.route)
-            }, "Start", viewModel.isStartEnabled)
+            ChoiceFooter(
+                onNextClick = {
+                    navController.navigate(Screen.SurveyScreen.route)
+                },
+                onBackClink = {
+                    navController.navigateUp()
+                },
+                "Start",
+                true,
+                viewModel.isStartEnabled
+            )
         }
     }
 }

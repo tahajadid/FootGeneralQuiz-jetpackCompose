@@ -37,7 +37,9 @@ import com.example.footgeneralquiz.theme.Green2
 @Composable
 fun ChoiceFooter(
     onNextClick: () -> Unit,
+    onBackClink: () -> Unit,
     title: String,
+    backIsVisible: Boolean,
     nextIsEnabled: Boolean
 ) {
     // Background imageBox
@@ -47,15 +49,21 @@ fun ChoiceFooter(
             .fillMaxHeight(),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.left_arrow),
-            contentDescription = null,
-            contentScale = ContentScale.Fit,
-            modifier = Modifier
-                .height(36.dp)
-                .width(36.dp)
-                .weight(0.3f)
-        )
+        if (backIsVisible) {
+            Image(
+                painter = painterResource(id = R.drawable.left_arrow),
+                contentDescription = null,
+                contentScale = ContentScale.Fit,
+                modifier = Modifier
+                    .height(36.dp)
+                    .width(36.dp)
+                    .weight(0.3f)
+                    .selectable(
+                        true,
+                        onClick = onBackClink
+                    )
+            )
+        }
 
         Card(
             modifier = Modifier
@@ -63,7 +71,8 @@ fun ChoiceFooter(
                 .height(50.dp)
                 .weight(0.7f)
                 .selectable(
-                    nextIsEnabled,
+                    enabled = nextIsEnabled,
+                    selected = nextIsEnabled,
                     onClick = onNextClick,
                     role = Role.RadioButton
                 ),
@@ -104,6 +113,6 @@ fun ChoiceFooter(
 @Composable
 fun WelcomeSceePrevirew() {
     FootGeneralQuizTheme {
-        ChoiceFooter({},"Testg",false)
+        ChoiceFooter({},{}, "Testg", false, false)
     }
 }
