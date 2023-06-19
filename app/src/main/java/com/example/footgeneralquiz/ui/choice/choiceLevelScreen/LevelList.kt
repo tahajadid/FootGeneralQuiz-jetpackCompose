@@ -14,7 +14,6 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -34,7 +33,6 @@ import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
 import com.example.footgeneralquiz.theme.Gold2
 import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green1Unselected
-import com.example.footgeneralquiz.theme.Green2
 import com.example.footgeneralquiz.util.Constants.LIST_OF_LEVELS
 
 @Composable
