@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.Dimension
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.footgeneralquiz.MainActivity
 import com.example.footgeneralquiz.R
@@ -32,7 +33,10 @@ import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
 import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green2
 import com.example.footgeneralquiz.theme.Green3
+import com.example.footgeneralquiz.ui.choice.ChoiceFooter
 import com.example.footgeneralquiz.ui.choice.ChoiceHeader
+import com.example.footgeneralquiz.ui.choice.ChoiceLevelViewModel
+import com.example.footgeneralquiz.ui.choice.choiceLevelScreen.LevelList
 import com.example.footgeneralquiz.util.supportWideScreen
 
 @Composable
@@ -44,6 +48,9 @@ fun ChoiceTypeScreen(navController: NavController) {
 
 @Composable
 fun ChoiceType(navController: NavController) {
+
+    val viewModel: ChoiceLevelViewModel = viewModel()
+
     val constraints = ConstraintSet {
         val headerBox = createRefFor("headerBox")
         val listBox = createRefFor("listBox")
@@ -131,9 +138,11 @@ fun ChoiceType(navController: NavController) {
                 .fillMaxHeight(0.8f)
 
         ) {
-            ChoiceList() {
-                navController.navigate(Screen.ChoiceLevelScreen.route)
-            }
+
+            ChoiceList(
+                onItemSelected = viewModel::onChoiceResponse,
+                selectedLevel = viewModel.choiceResponse
+            )
         }
 
         // footerBox
@@ -143,7 +152,11 @@ fun ChoiceType(navController: NavController) {
                 .fillMaxWidth(1f)
                 .fillMaxHeight(0.1f)
 
-        )
+        ) {
+            ChoiceFooter({
+                navController.navigate(Screen.ChoiceLevelScreen.route)
+            }, "Next" ,viewModel.isNextEnabled)
+        }
     }
 }
 

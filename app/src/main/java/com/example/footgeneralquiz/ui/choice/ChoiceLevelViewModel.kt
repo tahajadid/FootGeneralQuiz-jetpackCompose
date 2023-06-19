@@ -1,4 +1,4 @@
-package com.example.footgeneralquiz.ui.choice.choiceLevelScreen
+package com.example.footgeneralquiz.ui.choice
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -34,8 +34,8 @@ class ChoiceLevelViewModel : ViewModel() {
         _isStartEnabled.value = getIsStartEnabled()
     }
 
-    fun onChoiceResponse(level: Level) {
-        _levelResponse.value = level
+    fun onChoiceResponse(choice: Choice) {
+        _choiceResponse.value = choice
         _isNextEnabled.value = getIsNextEnabled()
     }
     private fun getIsStartEnabled(): Boolean {
