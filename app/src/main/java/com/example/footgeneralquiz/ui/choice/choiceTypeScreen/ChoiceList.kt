@@ -1,5 +1,6 @@
 package com.example.footgeneralquiz.ui.choice.choiceTypeScreen
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -26,7 +27,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.footgeneralquiz.R
 import com.example.footgeneralquiz.data.Choice
+import com.example.footgeneralquiz.theme.Blue1
 import com.example.footgeneralquiz.theme.Green1
+import com.example.footgeneralquiz.theme.Green1Unselected
+import com.example.footgeneralquiz.theme.Green2
 import com.example.footgeneralquiz.util.Constants.LIST_OF_CHOICES
 
 @Composable
@@ -77,7 +81,20 @@ fun ChoiceItemView(
             defaultElevation = 10.dp
         ),
         colors = CardDefaults.cardColors(
-            containerColor = Green1
+            containerColor =
+            if (selectedAnswer) {
+                Green1
+            } else {
+                Green1Unselected
+            }
+        ),
+        border = BorderStroke(
+            width = 2.dp,
+            color = if (selectedAnswer) {
+                Green1Unselected
+            } else {
+                Green1Unselected
+            }
         )
     ) {
         Column(

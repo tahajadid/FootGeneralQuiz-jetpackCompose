@@ -33,6 +33,7 @@ import com.example.footgeneralquiz.theme.ChallengeFontFamily
 import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
 import com.example.footgeneralquiz.theme.Gold2
 import com.example.footgeneralquiz.theme.Green1
+import com.example.footgeneralquiz.theme.Green1Unselected
 import com.example.footgeneralquiz.theme.Green2
 import com.example.footgeneralquiz.util.Constants.LIST_OF_LEVELS
 
@@ -85,15 +86,15 @@ fun LevelItemView(
             if (selectedAnswer) {
                 Green1
             } else {
-                Green2
+                Green1Unselected
             }
         ),
         border = BorderStroke(
             width = 2.dp,
             color = if (selectedAnswer) {
-                Green2
+                Green1Unselected
             } else {
-                Green2
+                Green1Unselected
             }
         )
     ) {
