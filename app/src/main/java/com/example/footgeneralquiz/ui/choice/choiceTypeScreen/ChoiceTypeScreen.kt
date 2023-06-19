@@ -36,7 +36,6 @@ import com.example.footgeneralquiz.theme.Green3
 import com.example.footgeneralquiz.ui.choice.ChoiceFooter
 import com.example.footgeneralquiz.ui.choice.ChoiceHeader
 import com.example.footgeneralquiz.ui.choice.ChoiceLevelViewModel
-import com.example.footgeneralquiz.ui.choice.choiceLevelScreen.LevelList
 import com.example.footgeneralquiz.util.supportWideScreen
 
 @Composable
@@ -48,7 +47,6 @@ fun ChoiceTypeScreen(navController: NavController) {
 
 @Composable
 fun ChoiceType(navController: NavController) {
-
     val viewModel: ChoiceLevelViewModel = viewModel()
 
     val constraints = ConstraintSet {
@@ -138,7 +136,6 @@ fun ChoiceType(navController: NavController) {
                 .fillMaxHeight(0.8f)
 
         ) {
-
             ChoiceList(
                 onItemSelected = viewModel::onChoiceResponse,
                 selectedLevel = viewModel.choiceResponse
@@ -153,9 +150,17 @@ fun ChoiceType(navController: NavController) {
                 .fillMaxHeight(0.1f)
 
         ) {
-            ChoiceFooter({
-                navController.navigate(Screen.ChoiceLevelScreen.route)
-            }, "Next" ,viewModel.isNextEnabled)
+            ChoiceFooter(
+                onNextClick = {
+                    navController.navigate(Screen.ChoiceLevelScreen.route)
+                },
+                onBackClink = {
+                    navController.navigateUp()
+                },
+                "Next",
+                false,
+                viewModel.isNextEnabled
+            )
         }
     }
 }
