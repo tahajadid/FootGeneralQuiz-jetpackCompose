@@ -27,10 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.footgeneralquiz.R
 import com.example.footgeneralquiz.data.Choice
-import com.example.footgeneralquiz.theme.Blue1
 import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green1Unselected
-import com.example.footgeneralquiz.theme.Green2
 import com.example.footgeneralquiz.util.Constants.LIST_OF_CHOICES
 
 @Composable
