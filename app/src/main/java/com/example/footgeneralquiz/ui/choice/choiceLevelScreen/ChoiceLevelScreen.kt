@@ -152,7 +152,7 @@ fun ChoiceLevel(navController: NavController) {
         ) {
             ChoiceFooter({
                 navController.navigate(Screen.SurveyScreen.route)
-            }, "Start" ,viewModel.isStartEnabled)
+            }, "Start", viewModel.isStartEnabled)
         }
     }
 }
