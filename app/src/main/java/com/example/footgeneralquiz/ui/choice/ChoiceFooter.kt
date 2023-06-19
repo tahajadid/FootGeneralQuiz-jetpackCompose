@@ -37,6 +37,7 @@ import com.example.footgeneralquiz.theme.Green2
 @Composable
 fun ChoiceFooter(
     onNextClick: () -> Unit,
+    title: String,
     nextIsEnabled: Boolean
 ) {
     // Background imageBox
@@ -82,7 +83,7 @@ fun ChoiceFooter(
                 verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = "Start",
+                    text = title,
                     fontWeight = FontWeight.Bold,
                     fontSize = 20.sp,
                     color =
@@ -103,6 +104,6 @@ fun ChoiceFooter(
 @Composable
 fun WelcomeSceePrevirew() {
     FootGeneralQuizTheme {
-        ChoiceFooter({}, false)
+        ChoiceFooter({},"Testg",false)
     }
 }

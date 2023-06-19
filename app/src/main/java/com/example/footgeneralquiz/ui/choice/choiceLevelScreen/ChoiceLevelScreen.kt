@@ -35,6 +35,7 @@ import com.example.footgeneralquiz.theme.Green2
 import com.example.footgeneralquiz.theme.Green3
 import com.example.footgeneralquiz.ui.choice.ChoiceFooter
 import com.example.footgeneralquiz.ui.choice.ChoiceHeader
+import com.example.footgeneralquiz.ui.choice.ChoiceLevelViewModel
 import com.example.footgeneralquiz.util.supportWideScreen
 
 @Composable
@@ -151,7 +152,7 @@ fun ChoiceLevel(navController: NavController) {
         ) {
             ChoiceFooter({
                 navController.navigate(Screen.SurveyScreen.route)
-            }, viewModel.isStartEnabled)
+            }, "Start" ,viewModel.isStartEnabled)
         }
     }
 }
