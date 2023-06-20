@@ -30,6 +30,7 @@ import com.example.footgeneralquiz.data.Choice
 import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green1Unselected
 import com.example.footgeneralquiz.util.Constants.LIST_OF_CHOICES
+import com.example.footgeneralquiz.util.choiceSelected
 
 @Composable
 fun ChoiceList(
@@ -51,7 +52,11 @@ fun ChoiceList(
 
                 val selected = LIST_OF_CHOICES[index] == selectedLevel
                 ChoiceItemView(
-                    onItemSelected = { onItemSelected(LIST_OF_CHOICES[index]) },
+                    onItemSelected = {
+                        // set the selected item
+                        choiceSelected = index.toString()
+                        onItemSelected(LIST_OF_CHOICES[index])
+                    },
                     selectedAnswer = selected,
                     index = LIST_OF_CHOICES[index].idChoice!!.toInt()
                 )
@@ -76,7 +81,7 @@ fun ChoiceItemView(
                 role = Role.RadioButton
             ),
         elevation = CardDefaults.cardElevation(
-            defaultElevation = 10.dp
+            defaultElevation = 4.dp
         ),
         colors = CardDefaults.cardColors(
             containerColor =

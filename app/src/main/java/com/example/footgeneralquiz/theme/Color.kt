@@ -14,4 +14,4 @@ val Blue2 = Color(0xFF003436)
 val Blue3 = Color(0x97005155)
 
 val Gold = Color(0xFFFFD700)
-val Gold2 = Color(0xFFDAA520)
+val Gold2 = Color(0xFFCAAB05)

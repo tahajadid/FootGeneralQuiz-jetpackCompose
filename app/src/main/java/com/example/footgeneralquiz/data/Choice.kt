@@ -3,6 +3,5 @@ package com.example.footgeneralquiz.data
 data class Choice(
     var idChoice: Int? = null,
     var title: String? = null,
-    var icon: String? = null,
-    var isSelected: Boolean = false
+    var icon: String? = null
 )

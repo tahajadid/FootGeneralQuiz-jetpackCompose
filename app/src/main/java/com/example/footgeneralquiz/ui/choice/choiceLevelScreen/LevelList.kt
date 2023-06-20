@@ -34,6 +34,7 @@ import com.example.footgeneralquiz.theme.Gold2
 import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green1Unselected
 import com.example.footgeneralquiz.util.Constants.LIST_OF_LEVELS
+import com.example.footgeneralquiz.util.levelSelected
 
 @Composable
 fun LevelList(
@@ -50,13 +51,17 @@ fun LevelList(
         LIST_OF_LEVELS.forEach { it ->
             val selected = it == selectedLevel
             LevelItemView(
-                onItemSelected = { onItemSelected(it) },
+                onItemSelected = {
+                    // set the level item
+                    levelSelected = it.idLevel.toString()
+                    onItemSelected(it)
+                },
                 selectedAnswer = selected,
                 index = it.idLevel!!.toInt()
             )
         }
 
-        Spacer(Modifier.height(18.dp))
+        Spacer(Modifier.height(16.dp))
     }
 }
 
@@ -106,13 +111,13 @@ fun LevelItemView(
                 painter = painterResource(id = getImageLevel(index)),
                 contentDescription = null,
                 contentScale = ContentScale.Fit,
-                modifier = Modifier.height(120.dp)
+                modifier = Modifier.height(100.dp).padding(6.dp)
             )
 
             Text(
                 text = LIST_OF_LEVELS[index].title.toString(),
                 fontWeight = FontWeight.Bold,
-                fontSize = 26.sp,
+                fontSize = 22.sp,
                 color = Gold2,
                 fontFamily = ChallengeFontFamily,
                 textAlign = TextAlign.Center

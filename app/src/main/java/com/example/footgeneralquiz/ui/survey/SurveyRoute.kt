@@ -86,28 +86,12 @@ fun SurveyRoute(
                 )
 
                 /*
-                SurveyQuestion.LAST_TAKEAWAY -> {
-                    val supportFragmentManager =
-                        LocalContext.current.findActivity().supportFragmentManager
-                    TakeawayQuestion(
-                        dateInMillis = viewModel.takeawayResponse,
-                        onClick = {
-                            showTakeawayDatePicker(
-                                date = viewModel.takeawayResponse,
-                                supportFragmentManager = supportFragmentManager,
-                                onDateSelected = viewModel::onTakeawayResponse
-                            )
-                        },
-                        modifier = modifier,
-                    )
-                }
-
                 SurveyQuestion.FEELING_ABOUT_SELFIES ->
                     FeelingAboutSelfiesQuestion(
                         value = viewModel.feelingAboutSelfiesResponse,
                         onValueChange = viewModel::onFeelingAboutSelfiesResponse,
                         modifier = modifier,
-                    )
+                        )
 
                 SurveyQuestion.TAKE_SELFIE -> TakeSelfieQuestion(
                     imageUri = viewModel.selfieUri,
