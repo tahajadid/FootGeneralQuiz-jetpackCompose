@@ -10,14 +10,12 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.TweenSpec
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.with
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.IntOffset
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.footgeneralquiz.theme.Green2
 import com.example.footgeneralquiz.ui.survey.surveyScreen.SurveyQuestionsScreen
 import com.google.android.material.datepicker.MaterialDatePicker
 
@@ -77,39 +75,23 @@ fun SurveyRoute(
             when (targetState.surveyQuestion) {
                 SurveyQuestion.FIRST -> FirstQuestion(
                     selectedAnswer = viewModel.firstResponse,
-                    onOptionSelected = viewModel::onSuperheroResponse,
+                    onOptionSelected = viewModel::onFirstResponse,
                     modifier = modifier
                 )
 
-                SurveyQuestion.SECOND -> FirstQuestion(
-                    selectedAnswer = viewModel.firstResponse,
-                    onOptionSelected = viewModel::onSuperheroResponse,
+                SurveyQuestion.SECOND -> SecondQuestion(
+                    selectedAnswer = viewModel.secondResponse,
+                    onOptionSelected = viewModel::onSecondResponse,
                     modifier = modifier
                 )
 
                 /*
-                SurveyQuestion.LAST_TAKEAWAY -> {
-                    val supportFragmentManager =
-                        LocalContext.current.findActivity().supportFragmentManager
-                    TakeawayQuestion(
-                        dateInMillis = viewModel.takeawayResponse,
-                        onClick = {
-                            showTakeawayDatePicker(
-                                date = viewModel.takeawayResponse,
-                                supportFragmentManager = supportFragmentManager,
-                                onDateSelected = viewModel::onTakeawayResponse
-                            )
-                        },
-                        modifier = modifier,
-                    )
-                }
-
                 SurveyQuestion.FEELING_ABOUT_SELFIES ->
                     FeelingAboutSelfiesQuestion(
                         value = viewModel.feelingAboutSelfiesResponse,
                         onValueChange = viewModel::onFeelingAboutSelfiesResponse,
                         modifier = modifier,
-                    )
+                        )
 
                 SurveyQuestion.TAKE_SELFIE -> TakeSelfieQuestion(
                     imageUri = viewModel.selfieUri,

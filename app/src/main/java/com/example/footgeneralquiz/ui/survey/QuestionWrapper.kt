@@ -21,7 +21,6 @@ import com.example.footgeneralquiz.theme.stronglyDeemphasizedAlpha
 fun QuestionWrapper(
     title: String,
     modifier: Modifier = Modifier,
-    directionsLabel: String? = null,
     content: @Composable () -> Unit
 ) {
     Column(
@@ -31,10 +30,6 @@ fun QuestionWrapper(
     ) {
         Spacer(Modifier.height(32.dp))
         QuestionTitle(title)
-        directionsLabel?.let {
-            Spacer(Modifier.height(18.dp))
-            QuestionDirections(it)
-        }
         Spacer(Modifier.height(18.dp))
         content()
     }

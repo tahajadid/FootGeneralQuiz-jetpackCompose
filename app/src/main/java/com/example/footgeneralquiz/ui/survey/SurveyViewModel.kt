@@ -28,6 +28,10 @@ class SurveyViewModel() : ViewModel() {
     val firstResponse: PossibleAnswer?
         get() = _firstResponse.value
 
+    private val _secondResponse = mutableStateOf<PossibleAnswer?>(null)
+    val secondResponse: PossibleAnswer?
+        get() = _secondResponse.value
+
     private val _takeawayResponse = mutableStateOf<Long?>(null)
     val takeawayResponse: Long?
         get() = _takeawayResponse.value
@@ -92,8 +96,13 @@ class SurveyViewModel() : ViewModel() {
         _isNextEnabled.value = getIsNextEnabled()
     }
 
-    fun onSuperheroResponse(possibleAnswer: PossibleAnswer) {
+    fun onFirstResponse(possibleAnswer: PossibleAnswer) {
         _firstResponse.value = possibleAnswer
+        _isNextEnabled.value = getIsNextEnabled()
+    }
+
+    fun onSecondResponse(possibleAnswer: PossibleAnswer) {
+        _secondResponse.value = possibleAnswer
         _isNextEnabled.value = getIsNextEnabled()
     }
 
@@ -115,7 +124,7 @@ class SurveyViewModel() : ViewModel() {
     private fun getIsNextEnabled(): Boolean {
         return when (questionOrder[questionIndex]) {
             SurveyQuestion.FIRST -> _firstResponse.value != null
-            SurveyQuestion.SECOND -> _freeTimeResponse.isNotEmpty()
+            SurveyQuestion.SECOND -> _secondResponse.value != null
             SurveyQuestion.THIRD -> _firstResponse.value != null
             SurveyQuestion.FOURTH -> _takeawayResponse.value != null
             SurveyQuestion.FIFTH -> _selfieUri.value != null
