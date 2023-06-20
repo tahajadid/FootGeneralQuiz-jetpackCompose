@@ -3,8 +3,7 @@ package com.example.footgeneralquiz.ui.survey
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.footgeneralquiz.data.PossibleAnswer
-import com.example.footgeneralquiz.util.ListOfQuestions.QUESTION_TEST
-import com.example.footgeneralquiz.util.ListOfQuestions.QUESTION_TEST_2
+import com.example.footgeneralquiz.util.QuestionDelivery.getTheRightQuestion
 
 @Composable
 fun FirstQuestion(
@@ -12,9 +11,10 @@ fun FirstQuestion(
     onOptionSelected: (PossibleAnswer) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val question = getTheRightQuestion("0", "0", "0")
     SingleChoiceQuestion(
-        title = QUESTION_TEST.titleQuestion.toString(),
-        question = QUESTION_TEST,
+        title = question.titleQuestion.toString(),
+        question = question,
         selectedAnswer = selectedAnswer,
         onOptionSelected = onOptionSelected,
         modifier = modifier
@@ -27,9 +27,10 @@ fun SecondQuestion(
     onOptionSelected: (PossibleAnswer) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val question = getTheRightQuestion("0", "0", "1")
     SingleChoiceQuestion(
-        title = QUESTION_TEST_2.titleQuestion.toString(),
-        question = QUESTION_TEST_2,
+        title = question.titleQuestion.toString(),
+        question = question,
         selectedAnswer = selectedAnswer,
         onOptionSelected = onOptionSelected,
         modifier = modifier
