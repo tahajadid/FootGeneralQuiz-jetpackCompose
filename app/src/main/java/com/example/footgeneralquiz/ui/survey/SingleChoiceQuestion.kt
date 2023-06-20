@@ -21,14 +21,12 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import com.example.footgeneralquiz.data.PossibleAnswer
 import com.example.footgeneralquiz.data.Question
-import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green1Unselected
 import com.example.footgeneralquiz.theme.Green2
 
 @Composable
 fun SingleChoiceQuestion(
     title: String,
-    directionsLabel: String,
     question: Question,
     selectedAnswer: PossibleAnswer?,
     onOptionSelected: (PossibleAnswer) -> Unit,
@@ -36,7 +34,6 @@ fun SingleChoiceQuestion(
 ) {
     QuestionWrapper(
         title = title,
-        directionsLabel = directionsLabel,
         modifier = modifier.selectableGroup()
     ) {
         question.possibleAnswers.forEach {

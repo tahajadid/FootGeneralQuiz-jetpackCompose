@@ -18,4 +18,18 @@ object ListOfQuestions {
         2,
         POSSIBLE_ANSWERS
     )
+
+    var POSSIBLE_ANSWERS_2 = listOf(
+        PossibleAnswer(0, "Answ 1"),
+        PossibleAnswer(1, "Answ 2"),
+        PossibleAnswer(2, "Answ 3"),
+        PossibleAnswer(3, "Answ 4")
+    )
+
+    var QUESTION_TEST_2 = Question(
+        0,
+        "Question 2 ?",
+        1,
+        POSSIBLE_ANSWERS_2
+    )
 }
