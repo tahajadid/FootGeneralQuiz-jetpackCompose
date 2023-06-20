@@ -91,14 +91,20 @@ fun RadioButtonWithTexteRow(
                 text,
                 Modifier.weight(1f),
                 style = MaterialTheme.typography.bodyLarge,
-                color = Green2)
+                color = if (selected) {
+                    Green2
+                } else {
+                    Green1Unselected
+                }
+            )
 
             Box(Modifier.padding(8.dp)) {
                 RadioButton(
                     selected,
                     onClick = null,
                     colors = RadioButtonDefaults.colors(
-                        Color.White
+                        selectedColor = Color.White,
+                        unselectedColor = Green1Unselected
                     )
                 )
             }
