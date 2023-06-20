@@ -85,22 +85,23 @@ fun SurveyRoute(
                     modifier = modifier
                 )
 
-                /*
-                SurveyQuestion.FEELING_ABOUT_SELFIES ->
-                    FeelingAboutSelfiesQuestion(
-                        value = viewModel.feelingAboutSelfiesResponse,
-                        onValueChange = viewModel::onFeelingAboutSelfiesResponse,
-                        modifier = modifier,
-                        )
-
-                SurveyQuestion.TAKE_SELFIE -> TakeSelfieQuestion(
-                    imageUri = viewModel.selfieUri,
-                    getNewImageUri = viewModel::getNewSelfieUri,
-                    onPhotoTaken = viewModel::onSelfieResponse,
-                    modifier = modifier,
+                SurveyQuestion.THIRD -> SecondQuestion(
+                    selectedAnswer = viewModel.thirdResponse,
+                    onOptionSelected = viewModel::onThirdResponse,
+                    modifier = modifier
                 )
 
-                 */
+                SurveyQuestion.FOURTH -> SecondQuestion(
+                    selectedAnswer = viewModel.fourthResponse,
+                    onOptionSelected = viewModel::onFourthResponse,
+                    modifier = modifier
+                )
+
+                SurveyQuestion.FIFTH -> SecondQuestion(
+                    selectedAnswer = viewModel.fifthResponse,
+                    onOptionSelected = viewModel::onFifthResponse,
+                    modifier = modifier
+                )
 
                 else -> {
                 }

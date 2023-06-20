@@ -32,6 +32,18 @@ class SurveyViewModel() : ViewModel() {
     val secondResponse: PossibleAnswer?
         get() = _secondResponse.value
 
+    private val _thirdResponse = mutableStateOf<PossibleAnswer?>(null)
+    val thirdResponse: PossibleAnswer?
+        get() = _thirdResponse.value
+
+    private val _fourthResponse = mutableStateOf<PossibleAnswer?>(null)
+    val fourthResponse: PossibleAnswer?
+        get() = _fourthResponse.value
+
+    private val _fifthResponse = mutableStateOf<PossibleAnswer?>(null)
+    val fifthResponse: PossibleAnswer?
+        get() = _fifthResponse.value
+
     private val _takeawayResponse = mutableStateOf<Long?>(null)
     val takeawayResponse: Long?
         get() = _takeawayResponse.value
@@ -106,6 +118,21 @@ class SurveyViewModel() : ViewModel() {
         _isNextEnabled.value = getIsNextEnabled()
     }
 
+    fun onThirdResponse(possibleAnswer: PossibleAnswer) {
+        _thirdResponse.value = possibleAnswer
+        _isNextEnabled.value = getIsNextEnabled()
+    }
+
+    fun onFourthResponse(possibleAnswer: PossibleAnswer) {
+        _fourthResponse.value = possibleAnswer
+        _isNextEnabled.value = getIsNextEnabled()
+    }
+
+    fun onFifthResponse(possibleAnswer: PossibleAnswer) {
+        _fifthResponse.value = possibleAnswer
+        _isNextEnabled.value = getIsNextEnabled()
+    }
+
     fun onTakeawayResponse(timestamp: Long) {
         _takeawayResponse.value = timestamp
         _isNextEnabled.value = getIsNextEnabled()
@@ -125,9 +152,9 @@ class SurveyViewModel() : ViewModel() {
         return when (questionOrder[questionIndex]) {
             SurveyQuestion.FIRST -> _firstResponse.value != null
             SurveyQuestion.SECOND -> _secondResponse.value != null
-            SurveyQuestion.THIRD -> _firstResponse.value != null
-            SurveyQuestion.FOURTH -> _takeawayResponse.value != null
-            SurveyQuestion.FIFTH -> _selfieUri.value != null
+            SurveyQuestion.THIRD -> _thirdResponse.value != null
+            SurveyQuestion.FOURTH -> _fourthResponse.value != null
+            SurveyQuestion.FIFTH -> _fifthResponse.value != null
         }
     }
 
