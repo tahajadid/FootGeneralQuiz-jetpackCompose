@@ -9,16 +9,21 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import com.example.footgeneralquiz.data.PossibleAnswer
 import com.example.footgeneralquiz.data.Question
+import com.example.footgeneralquiz.theme.Green1
+import com.example.footgeneralquiz.theme.Green1Unselected
+import com.example.footgeneralquiz.theme.Green2
 
 @Composable
 fun SingleChoiceQuestion(
@@ -56,16 +61,16 @@ fun RadioButtonWithTexteRow(
     Surface(
         shape = MaterialTheme.shapes.small,
         color = if (selected) {
-            MaterialTheme.colorScheme.primaryContainer
+            Green1Unselected
         } else {
-            MaterialTheme.colorScheme.surface
+            Green2
         },
         border = BorderStroke(
             width = 1.dp,
             color = if (selected) {
-                MaterialTheme.colorScheme.primary
+                Green1Unselected
             } else {
-                MaterialTheme.colorScheme.outline
+                Green1Unselected
             }
         ),
         modifier = modifier
@@ -82,9 +87,20 @@ fun RadioButtonWithTexteRow(
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(text, Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge)
+            Text(
+                text,
+                Modifier.weight(1f),
+                style = MaterialTheme.typography.bodyLarge,
+                color = Green2)
+
             Box(Modifier.padding(8.dp)) {
-                RadioButton(selected, onClick = null)
+                RadioButton(
+                    selected,
+                    onClick = null,
+                    colors = RadioButtonDefaults.colors(
+                        Color.White
+                    )
+                )
             }
         }
     }

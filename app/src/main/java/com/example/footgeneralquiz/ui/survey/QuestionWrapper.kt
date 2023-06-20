@@ -1,6 +1,5 @@
 package com.example.footgeneralquiz.ui.survey
 
-import androidx.annotation.StringRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -13,9 +12,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.example.footgeneralquiz.theme.slightlyDeemphasizedAlpha
+import com.example.footgeneralquiz.theme.Blue3
+import com.example.footgeneralquiz.theme.Green2
 import com.example.footgeneralquiz.theme.stronglyDeemphasizedAlpha
 
 @Composable
@@ -49,11 +48,11 @@ private fun QuestionTitle(
     Text(
         text = title,
         style = MaterialTheme.typography.titleMedium,
-        color = MaterialTheme.colorScheme.onSurface.copy(alpha = slightlyDeemphasizedAlpha),
+        color = Green2,
         modifier = modifier
             .fillMaxWidth()
             .background(
-                color = MaterialTheme.colorScheme.inverseOnSurface,
+                Blue3,
                 shape = MaterialTheme.shapes.small
             )
             .padding(vertical = 24.dp, horizontal = 16.dp)
