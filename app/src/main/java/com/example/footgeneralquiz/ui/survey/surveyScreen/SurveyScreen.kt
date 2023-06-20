@@ -1,6 +1,7 @@
 package com.example.footgeneralquiz.ui.survey.surveyScreen
 
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -23,12 +25,18 @@ import androidx.compose.material3.ProgressIndicatorDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.footgeneralquiz.R
+import com.example.footgeneralquiz.theme.Blue1
+import com.example.footgeneralquiz.theme.Blue1Unselected
+import com.example.footgeneralquiz.theme.Blue2
+import com.example.footgeneralquiz.theme.Green2
 import com.example.footgeneralquiz.theme.stronglyDeemphasizedAlpha
 import com.example.footgeneralquiz.ui.survey.SurveyScreenData
 import com.example.footgeneralquiz.util.supportWideScreen
@@ -45,7 +53,9 @@ fun SurveyQuestionsScreen(
     onDonePressed: () -> Unit,
     content: @Composable (PaddingValues) -> Unit
 ) {
-    Surface(modifier = Modifier.supportWideScreen()) {
+    Surface(
+        modifier = Modifier.supportWideScreen()
+    ) {
         Scaffold(
             topBar = {
                 SurveyTopAppBar(
@@ -64,75 +74,11 @@ fun SurveyQuestionsScreen(
                     onNextPressed = onNextPressed,
                     onDonePressed = onDonePressed
                 )
-            }
-        )
-    }
-}
-
-/*
-@OptIn(ExperimentalMaterial3Api::class) // Scaffold is experimental in m3
-@Composable
-fun SurveyResultScreen(
-    onDonePressed: () -> Unit,
-) {
-
-    Surface(modifier = Modifier.supportWideScreen()) {
-        Scaffold(
-            content = { innerPadding ->
-                val modifier = Modifier.padding(innerPadding)
-                SurveyResult(
-                    title = stringResource(R.string.survey_result_title),
-                    subtitle = stringResource(R.string.survey_result_subtitle),
-                    description = stringResource(R.string.survey_result_description),
-                    modifier = modifier
-                )
             },
-            bottomBar = {
-                OutlinedButton(
-                    onClick = onDonePressed,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 20.dp, vertical = 24.dp)
-                ) {
-                    Text(text = stringResource(id = R.string.done))
-                }
-            }
+            containerColor = Green2
         )
     }
 }
-
- */
-
-/*
-@Composable
-private fun SurveyResult(
-    title: String,
-    subtitle: String,
-    description: String,
-    modifier: Modifier = Modifier
-) {
-    LazyColumn(modifier = modifier.fillMaxSize()) {
-        item {
-            Spacer(modifier = Modifier.height(44.dp))
-            Text(
-                text = title,
-                style = MaterialTheme.typography.displaySmall,
-                modifier = Modifier.padding(horizontal = 20.dp)
-            )
-            Text(
-                text = subtitle,
-                style = MaterialTheme.typography.titleMedium,
-                modifier = Modifier.padding(20.dp)
-            )
-            Text(
-                text = description,
-                style = MaterialTheme.typography.bodyLarge,
-                modifier = Modifier.padding(horizontal = 20.dp)
-            )
-        }
-    }
-}
- */
 
 @Composable
 private fun TopAppBarTitle(
@@ -162,7 +108,9 @@ fun SurveyTopAppBar(
     totalQuestionsCount: Int,
     onClosePressed: () -> Unit
 ) {
-    Column(modifier = Modifier.fillMaxWidth()) {
+    Column(
+        modifier = Modifier.background(Green2)
+    ) {
         CenterAlignedTopAppBar(
             title = {
                 TopAppBarTitle(
@@ -170,10 +118,10 @@ fun SurveyTopAppBar(
                     totalQuestionsCount = totalQuestionsCount
                 )
             },
+            colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Green2),
             actions = {
                 IconButton(
-                    onClick = onClosePressed,
-                    modifier = Modifier.padding(4.dp)
+                    onClick = onClosePressed
                 ) {
                     Icon(
                         Icons.Filled.Close,
@@ -208,12 +156,12 @@ fun SurveyBottomBar(
     onDonePressed: () -> Unit
 ) {
     Surface(
-        modifier = Modifier.fillMaxWidth(),
-        shadowElevation = 7.dp
+        modifier = Modifier.fillMaxWidth()
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
+                .background(Green2)
                 .padding(horizontal = 16.dp, vertical = 20.dp)
         ) {
             if (shouldShowPreviousButton) {
@@ -223,7 +171,8 @@ fun SurveyBottomBar(
                         .height(48.dp),
                     onClick = onPreviousPressed
                 ) {
-                    Text(text = stringResource(id = R.string.previous))
+                    Text(text = stringResource(id = R.string.previous),
+                    color = Blue1)
                 }
                 Spacer(modifier = Modifier.width(16.dp))
             }
@@ -232,6 +181,7 @@ fun SurveyBottomBar(
                     modifier = Modifier
                         .weight(1f)
                         .height(48.dp),
+                    colors = ButtonDefaults.outlinedButtonColors(containerColor = Blue1, disabledContainerColor = Blue1Unselected),
                     onClick = onDonePressed,
                     enabled = isNextButtonEnabled
                 ) {
@@ -243,9 +193,11 @@ fun SurveyBottomBar(
                         .weight(1f)
                         .height(48.dp),
                     onClick = onNextPressed,
+                    colors = ButtonDefaults.outlinedButtonColors(containerColor = Blue1, disabledContainerColor = Blue1Unselected),
                     enabled = isNextButtonEnabled
                 ) {
-                    Text(text = stringResource(id = R.string.next))
+                    Text(text = stringResource(id = R.string.next),
+                    color = Green2)
                 }
             }
         }

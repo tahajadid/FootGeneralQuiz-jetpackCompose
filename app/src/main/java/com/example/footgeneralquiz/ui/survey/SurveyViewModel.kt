@@ -9,11 +9,11 @@ import com.example.footgeneralquiz.data.PossibleAnswer
 class SurveyViewModel() : ViewModel() {
 
     private val questionOrder: List<SurveyQuestion> = listOf(
-        SurveyQuestion.SUPERHERO,
-        SurveyQuestion.FREE_TIME,
-        SurveyQuestion.LAST_TAKEAWAY,
-        SurveyQuestion.FEELING_ABOUT_SELFIES,
-        SurveyQuestion.TAKE_SELFIE
+        SurveyQuestion.FIRST,
+        SurveyQuestion.SECOND,
+        SurveyQuestion.THIRD,
+        SurveyQuestion.FOURTH,
+        SurveyQuestion.FIFTH
     )
 
     private var questionIndex = 0
@@ -24,9 +24,9 @@ class SurveyViewModel() : ViewModel() {
     val freeTimeResponse: List<Int>
         get() = _freeTimeResponse
 
-    private val _superheroResponse = mutableStateOf<PossibleAnswer?>(null)
-    val superheroResponse: PossibleAnswer?
-        get() = _superheroResponse.value
+    private val _firstResponse = mutableStateOf<PossibleAnswer?>(null)
+    val firstResponse: PossibleAnswer?
+        get() = _firstResponse.value
 
     private val _takeawayResponse = mutableStateOf<Long?>(null)
     val takeawayResponse: Long?
@@ -93,7 +93,7 @@ class SurveyViewModel() : ViewModel() {
     }
 
     fun onSuperheroResponse(possibleAnswer: PossibleAnswer) {
-        _superheroResponse.value = possibleAnswer
+        _firstResponse.value = possibleAnswer
         _isNextEnabled.value = getIsNextEnabled()
     }
 
@@ -114,11 +114,11 @@ class SurveyViewModel() : ViewModel() {
 
     private fun getIsNextEnabled(): Boolean {
         return when (questionOrder[questionIndex]) {
-            SurveyQuestion.FREE_TIME -> _freeTimeResponse.isNotEmpty()
-            SurveyQuestion.SUPERHERO -> _superheroResponse.value != null
-            SurveyQuestion.LAST_TAKEAWAY -> _takeawayResponse.value != null
-            SurveyQuestion.FEELING_ABOUT_SELFIES -> _feelingAboutSelfiesResponse.value != null
-            SurveyQuestion.TAKE_SELFIE -> _selfieUri.value != null
+            SurveyQuestion.FIRST -> _firstResponse.value != null
+            SurveyQuestion.SECOND -> _freeTimeResponse.isNotEmpty()
+            SurveyQuestion.THIRD -> _firstResponse.value != null
+            SurveyQuestion.FOURTH -> _takeawayResponse.value != null
+            SurveyQuestion.FIFTH -> _selfieUri.value != null
         }
     }
 
@@ -134,11 +134,11 @@ class SurveyViewModel() : ViewModel() {
 }
 
 enum class SurveyQuestion {
-    SUPERHERO,
-    FREE_TIME,
-    LAST_TAKEAWAY,
-    FEELING_ABOUT_SELFIES,
-    TAKE_SELFIE,
+    FIRST,
+    SECOND,
+    THIRD,
+    FOURTH,
+    FIFTH,
 }
 
 data class SurveyScreenData(
