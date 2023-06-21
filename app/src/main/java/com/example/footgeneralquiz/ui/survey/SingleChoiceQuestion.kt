@@ -47,7 +47,7 @@ fun SingleChoiceQuestion(
                 onOptionSelected = {
                     onOptionSelected(it)
                     // change the values on the internal variable
-                    userAnswer[question.idQuestion!!.toInt()].selectedAnswer = it.idPossibleAnswer
+                    userAnswer[question.idQuestion!!.toInt()].selectedAnswer = it.idPossibleAnswer.toString()
                     userAnswer[question.idQuestion!!.toInt()].correctAnswer = question.idCorrectAnswer.toString()
 
                     Log.d("TestonOptionSelected", "question id :" + question.idQuestion!!.toInt())

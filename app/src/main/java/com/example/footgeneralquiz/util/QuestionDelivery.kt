@@ -1,5 +1,6 @@
 package com.example.footgeneralquiz.util
 
+import android.util.Log
 import com.example.footgeneralquiz.data.Question
 import com.example.footgeneralquiz.data.UserAnswer
 import com.example.footgeneralquiz.util.ListOfQuestions.QUESTION_BUNDLE_0_0
@@ -34,7 +35,7 @@ object QuestionDelivery {
     fun getTheResult(userAnswer: List<UserAnswer>): Int {
         var score = 0
         userAnswer.forEach {
-            if(it.selectedAnswer!!.equals(it.correctAnswer)) score ++
+            if (it.selectedAnswer!!.equals(it.correctAnswer)) score++
         }
         return score
     }
