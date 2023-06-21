@@ -73,36 +73,41 @@ fun SurveyRoute(
         ) { targetState ->
 
             when (targetState.surveyQuestion) {
-                SurveyQuestion.FIRST -> FirstQuestion(
+                SurveyQuestion.FIRST -> OneChoiceQuestion(
                     selectedAnswer = viewModel.firstResponse,
                     onOptionSelected = viewModel::onFirstResponse,
-                    modifier = modifier
+                    modifier = modifier,
+                    "0"
                 )
 
-                SurveyQuestion.SECOND -> SecondQuestion(
+                SurveyQuestion.SECOND -> OneChoiceQuestion(
                     selectedAnswer = viewModel.secondResponse,
                     onOptionSelected = viewModel::onSecondResponse,
-                    modifier = modifier
+                    modifier = modifier,
+                    "1"
                 )
 
-                SurveyQuestion.THIRD -> SecondQuestion(
+                SurveyQuestion.THIRD -> OneChoiceQuestion(
                     selectedAnswer = viewModel.thirdResponse,
                     onOptionSelected = viewModel::onThirdResponse,
-                    modifier = modifier
+                    modifier = modifier,
+                    "2"
                 )
 
-                SurveyQuestion.FOURTH -> SecondQuestion(
+                SurveyQuestion.FOURTH -> OneChoiceQuestion(
                     selectedAnswer = viewModel.fourthResponse,
                     onOptionSelected = viewModel::onFourthResponse,
-                    modifier = modifier
+                    modifier = modifier,
+                    "3"
                 )
 
-                SurveyQuestion.FIFTH -> SecondQuestion(
-                    selectedAnswer = viewModel.fifthResponse,
-                    onOptionSelected = viewModel::onFifthResponse,
-                    modifier = modifier
-                )
-
+                SurveyQuestion.FIFTH ->
+                    OneChoiceQuestion(
+                        selectedAnswer = viewModel.fifthResponse,
+                        onOptionSelected = viewModel::onFifthResponse,
+                        modifier = modifier,
+                        "4"
+                    )
                 else -> {
                 }
             }
