@@ -1,6 +1,5 @@
 package com.example.footgeneralquiz.util
 
-import android.util.Log
 import com.example.footgeneralquiz.data.Question
 import com.example.footgeneralquiz.data.UserAnswer
 import com.example.footgeneralquiz.util.ListOfQuestions.QUESTION_BUNDLE_0_0
