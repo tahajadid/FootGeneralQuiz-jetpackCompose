@@ -34,7 +34,7 @@ object QuestionDelivery {
     fun getTheResult(userAnswer: List<UserAnswer>): Int {
         var score = 0
         userAnswer.forEach {
-            if(it.selectedAnswer!!.equals(it.correctAnswer)) score ++
+            if (it.selectedAnswer!!.equals(it.correctAnswer)) score++
         }
         return score
     }

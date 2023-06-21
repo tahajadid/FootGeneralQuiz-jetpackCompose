@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import com.example.footgeneralquiz.data.UserAnswer
 import com.example.footgeneralquiz.navigation.Screen
 import com.example.footgeneralquiz.ui.survey.surveyScreen.SurveyQuestionsScreen
 import com.example.footgeneralquiz.util.QuestionDelivery
@@ -59,6 +60,14 @@ fun SurveyRoute(
                         userAnswer
                     ).toString()
                 )
+            )
+            // re-init userAnswer of the actual session
+            userAnswer = listOf(
+                UserAnswer(0),
+                UserAnswer(1),
+                UserAnswer(2),
+                UserAnswer(3),
+                UserAnswer(4)
             )
         }
     ) { paddingValues ->
