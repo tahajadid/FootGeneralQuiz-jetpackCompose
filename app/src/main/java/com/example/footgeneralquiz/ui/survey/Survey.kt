@@ -23,19 +23,3 @@ fun OneChoiceQuestion(
         modifier = modifier
     )
 }
-
-@Composable
-fun SecondQuestion(
-    selectedAnswer: PossibleAnswer?,
-    onOptionSelected: (PossibleAnswer) -> Unit,
-    modifier: Modifier = Modifier
-) {
-    val question = getTheRightQuestion("0", "0", "1")
-    SingleChoiceQuestion(
-        title = question.titleQuestion.toString(),
-        question = question,
-        selectedAnswer = selectedAnswer,
-        onOptionSelected = onOptionSelected,
-        modifier = modifier
-    )
-}
