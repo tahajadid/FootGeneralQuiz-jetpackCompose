@@ -1,13 +1,16 @@
 package com.example.footgeneralquiz.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.footgeneralquiz.ui.choice.choiceLevelScreen.ChoiceLevelScreen
 import com.example.footgeneralquiz.ui.choice.choiceTypeScreen.ChoiceTypeScreen
 import com.example.footgeneralquiz.ui.splash.SplashScreen
 import com.example.footgeneralquiz.ui.survey.SurveyRoute
+import com.example.footgeneralquiz.ui.survey.surveyScreen.SurveyResultScreen
 
 @Composable
 fun Navigation() {
@@ -30,10 +33,27 @@ fun Navigation() {
 
         composable(route = Screen.SurveyScreen.route) {
             SurveyRoute(
+                navController = navController,
                 onSurveyComplete = {
-                    // navController.navigate(SURVEY_RESULTS_ROUTE)
+                    navController.navigate(Screen.ResultScreen.route)
                 },
                 onNavUp = navController::navigateUp
+            )
+        }
+
+        composable(
+            route = Screen.ResultScreen.route + "/{name}",
+            arguments = listOf(
+                navArgument("name") {
+                    type = NavType.StringType
+                    defaultValue = "0"
+                    nullable = false
+                }
+            )
+        ) {
+            SurveyResultScreen(
+                onDonePressed = {},
+                result = it.arguments?.getString("name").toString()
             )
         }
 

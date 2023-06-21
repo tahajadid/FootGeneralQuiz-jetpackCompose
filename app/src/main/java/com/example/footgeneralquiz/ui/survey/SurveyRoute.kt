@@ -16,6 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.IntOffset
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
+import com.example.footgeneralquiz.navigation.Screen
 import com.example.footgeneralquiz.ui.survey.surveyScreen.SurveyQuestionsScreen
 import com.google.android.material.datepicker.MaterialDatePicker
 
@@ -27,6 +29,7 @@ private const val CONTENT_ANIMATION_DURATION = 300
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun SurveyRoute(
+    navController: NavController,
     onSurveyComplete: () -> Unit,
     onNavUp: () -> Unit
 ) {
@@ -48,7 +51,10 @@ fun SurveyRoute(
         },
         onPreviousPressed = { viewModel.onPreviousPressed() },
         onNextPressed = { viewModel.onNextPressed() },
-        onDonePressed = { viewModel.onDonePressed(onSurveyComplete) }
+        onDonePressed = {
+            navController.navigate(Screen.ResultScreen.withArgs("---5"))
+            // viewModel.onDonePressed(onSurveyComplete)
+        }
     ) { paddingValues ->
 
         val modifier = Modifier.padding(paddingValues)
