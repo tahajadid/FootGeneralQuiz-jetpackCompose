@@ -1,6 +1,7 @@
 package com.example.footgeneralquiz.util
 
 import com.example.footgeneralquiz.data.Question
+import com.example.footgeneralquiz.data.UserAnswer
 import com.example.footgeneralquiz.util.ListOfQuestions.QUESTION_BUNDLE_0_0
 import com.example.footgeneralquiz.util.ListOfQuestions.QUESTION_BUNDLE_0_1
 import com.example.footgeneralquiz.util.ListOfQuestions.QUESTION_BUNDLE_0_2
@@ -28,5 +29,13 @@ object QuestionDelivery {
                 else return QUESTION_BUNDLE_1_2[indexQuestion.toInt()]
             }
         }
+    }
+
+    fun getTheResult(userAnswer: List<UserAnswer>): Int {
+        var score = 0
+        userAnswer.forEach {
+            if(it.selectedAnswer!!.equals(it.correctAnswer)) score ++
+        }
+        return score
     }
 }
