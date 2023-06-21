@@ -1,7 +1,5 @@
 package com.example.footgeneralquiz.ui.survey
 
-import android.net.Uri
-import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.footgeneralquiz.data.PossibleAnswer
@@ -19,11 +17,6 @@ class SurveyViewModel() : ViewModel() {
     private var questionIndex = 0
 
     // ----- Responses exposed as State -----
-
-    private val _freeTimeResponse = mutableStateListOf<Int>()
-    val freeTimeResponse: List<Int>
-        get() = _freeTimeResponse
-
     private val _firstResponse = mutableStateOf<PossibleAnswer?>(null)
     val firstResponse: PossibleAnswer?
         get() = _firstResponse.value
@@ -44,20 +37,7 @@ class SurveyViewModel() : ViewModel() {
     val fifthResponse: PossibleAnswer?
         get() = _fifthResponse.value
 
-    private val _takeawayResponse = mutableStateOf<Long?>(null)
-    val takeawayResponse: Long?
-        get() = _takeawayResponse.value
-
-    private val _feelingAboutSelfiesResponse = mutableStateOf<Float?>(null)
-    val feelingAboutSelfiesResponse: Float?
-        get() = _feelingAboutSelfiesResponse.value
-
-    private val _selfieUri = mutableStateOf<Uri?>(null)
-    val selfieUri
-        get() = _selfieUri.value
-
     // ----- Survey status exposed as State -----
-
     private val _surveyScreenData = mutableStateOf(createSurveyScreenData())
     val surveyScreenData: SurveyScreenData?
         get() = _surveyScreenData.value
@@ -94,20 +74,6 @@ class SurveyViewModel() : ViewModel() {
         _surveyScreenData.value = createSurveyScreenData()
     }
 
-    fun onDonePressed(onSurveyComplete: () -> Unit) {
-        // Here is where you could validate that the requirements of the survey are complete
-        onSurveyComplete()
-    }
-
-    fun onFreeTimeResponse(selected: Boolean, answer: Int) {
-        if (selected) {
-            _freeTimeResponse.add(answer)
-        } else {
-            _freeTimeResponse.remove(answer)
-        }
-        _isNextEnabled.value = getIsNextEnabled()
-    }
-
     fun onFirstResponse(possibleAnswer: PossibleAnswer) {
         _firstResponse.value = possibleAnswer
         _isNextEnabled.value = getIsNextEnabled()
@@ -130,21 +96,6 @@ class SurveyViewModel() : ViewModel() {
 
     fun onFifthResponse(possibleAnswer: PossibleAnswer) {
         _fifthResponse.value = possibleAnswer
-        _isNextEnabled.value = getIsNextEnabled()
-    }
-
-    fun onTakeawayResponse(timestamp: Long) {
-        _takeawayResponse.value = timestamp
-        _isNextEnabled.value = getIsNextEnabled()
-    }
-
-    fun onFeelingAboutSelfiesResponse(feeling: Float) {
-        _feelingAboutSelfiesResponse.value = feeling
-        _isNextEnabled.value = getIsNextEnabled()
-    }
-
-    fun onSelfieResponse(uri: Uri) {
-        _selfieUri.value = uri
         _isNextEnabled.value = getIsNextEnabled()
     }
 

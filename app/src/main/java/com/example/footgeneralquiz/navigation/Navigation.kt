@@ -34,9 +34,6 @@ fun Navigation() {
         composable(route = Screen.SurveyScreen.route) {
             SurveyRoute(
                 navController = navController,
-                onSurveyComplete = {
-                    navController.navigate(Screen.ResultScreen.route)
-                },
                 onNavUp = navController::navigateUp
             )
         }

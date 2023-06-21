@@ -19,6 +19,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.footgeneralquiz.navigation.Screen
 import com.example.footgeneralquiz.ui.survey.surveyScreen.SurveyQuestionsScreen
+import com.example.footgeneralquiz.util.QuestionDelivery
+import com.example.footgeneralquiz.util.userAnswer
 import com.google.android.material.datepicker.MaterialDatePicker
 
 private const val CONTENT_ANIMATION_DURATION = 300
@@ -30,7 +32,6 @@ private const val CONTENT_ANIMATION_DURATION = 300
 @Composable
 fun SurveyRoute(
     navController: NavController,
-    onSurveyComplete: () -> Unit,
     onNavUp: () -> Unit
 ) {
     val viewModel: SurveyViewModel = viewModel()
@@ -52,8 +53,13 @@ fun SurveyRoute(
         onPreviousPressed = { viewModel.onPreviousPressed() },
         onNextPressed = { viewModel.onNextPressed() },
         onDonePressed = {
-            navController.navigate(Screen.ResultScreen.withArgs("---5"))
-            // viewModel.onDonePressed(onSurveyComplete)
+            navController.navigate(
+                Screen.ResultScreen.withArgs(
+                    QuestionDelivery.getTheResult(
+                        userAnswer
+                    ).toString()
+                )
+            )
         }
     ) { paddingValues ->
 

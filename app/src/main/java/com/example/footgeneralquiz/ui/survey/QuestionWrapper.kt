@@ -54,6 +54,7 @@ private fun QuestionTitle(
     )
 }
 
+/*
 @Composable
 private fun QuestionDirections(
     directionsLabel: String,
@@ -69,3 +70,4 @@ private fun QuestionDirections(
             .padding(horizontal = 8.dp)
     )
 }
+ */

@@ -21,8 +21,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.footgeneralquiz.R
+import com.example.footgeneralquiz.data.UserAnswer
 import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
+import com.example.footgeneralquiz.util.QuestionDelivery
 import com.example.footgeneralquiz.util.supportWideScreen
+import com.example.footgeneralquiz.util.userAnswer
 
 @OptIn(ExperimentalMaterial3Api::class)
 // Scaffold is experimental in m3
@@ -87,6 +90,6 @@ private fun SurveyResult(
 @Composable
 fun WelcomeScreenPreview() {
     FootGeneralQuizTheme {
-        SurveyResultScreen({},"1/5")
+        SurveyResultScreen({}, "dd")
     }
 }
