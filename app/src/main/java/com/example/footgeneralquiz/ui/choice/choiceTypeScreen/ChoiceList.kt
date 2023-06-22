@@ -131,12 +131,12 @@ fun ChoiceItemView(
 fun getImageType(id: String?): Int {
     when (id) {
         "WORLD_CUP" -> return R.drawable.worldcup
-        "TEAMS" -> return R.drawable.worldcup
-        "LEAGUE_EU" -> return R.drawable.worldcup
-        "LEAGUE_AF" -> return R.drawable.worldcup
-        "PLAYERS" -> return R.drawable.worldcup
-        "FLAGS" -> return R.drawable.worldcup
-        "AWARDS" -> return R.drawable.worldcup
+        "TEAMS" -> return R.drawable.teams
+        "LEAGUE_EU" -> return R.drawable.uefa
+        "LEAGUE_AF" -> return R.drawable.uefa
+        "PLAYERS" -> return R.drawable.players
+        "FLAGS" -> return R.drawable.flags
+        "AWARDS" -> return R.drawable.awards
         "VARIOUS" -> return R.drawable.worldcup
         else -> return R.drawable.worldcup
     }
