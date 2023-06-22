@@ -179,13 +179,13 @@ private fun SurveyResult(
                 .layoutId("progress")
         )
 
-        var state by remember { mutableStateOf(true) }
+        var stateOfLoop by remember { mutableStateOf(true) }
 
         // Just once
         LaunchedEffect(Unit) {
-            while (state) {
+            while (stateOfLoop) {
                 if (progress < 1f) progress += 0.2f
-                else state = false
+                else stateOfLoop = false
                 delay(200)
             }
         }
