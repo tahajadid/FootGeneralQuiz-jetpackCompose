@@ -15,7 +15,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.footgeneralquiz.theme.Blue3
 import com.example.footgeneralquiz.theme.Green2
-import com.example.footgeneralquiz.theme.stronglyDeemphasizedAlpha
 
 @Composable
 fun QuestionWrapper(
@@ -53,21 +52,3 @@ private fun QuestionTitle(
             .padding(vertical = 24.dp, horizontal = 16.dp)
     )
 }
-
-/*
-@Composable
-private fun QuestionDirections(
-    directionsLabel: String,
-    modifier: Modifier = Modifier
-) {
-    Text(
-        text = directionsLabel,
-        color = MaterialTheme.colorScheme.onSurface
-            .copy(alpha = stronglyDeemphasizedAlpha),
-        style = MaterialTheme.typography.bodySmall,
-        modifier = modifier
-            .fillMaxWidth()
-            .padding(horizontal = 8.dp)
-    )
-}
- */
