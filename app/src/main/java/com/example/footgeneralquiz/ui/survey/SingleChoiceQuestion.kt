@@ -30,13 +30,15 @@ import com.example.footgeneralquiz.util.userAnswer
 fun SingleChoiceQuestion(
     title: String,
     question: Question,
+    withImage: Boolean,
     selectedAnswer: PossibleAnswer?,
     onOptionSelected: (PossibleAnswer) -> Unit,
     modifier: Modifier = Modifier
 ) {
     QuestionWrapper(
         title = title,
-        modifier = modifier.selectableGroup()
+        modifier = modifier.selectableGroup(),
+        withImage = withImage
     ) {
         question.possibleAnswers.forEach {
             val selected = it == selectedAnswer

@@ -96,6 +96,7 @@ fun SurveyRoute(
             when (targetState.surveyQuestion) {
                 SurveyQuestion.FIRST -> OneChoiceQuestion(
                     selectedAnswer = viewModel.firstResponse,
+                    withImage = false,
                     onOptionSelected = viewModel::onFirstResponse,
                     modifier = modifier,
                     "0"
@@ -103,6 +104,7 @@ fun SurveyRoute(
 
                 SurveyQuestion.SECOND -> OneChoiceQuestion(
                     selectedAnswer = viewModel.secondResponse,
+                    withImage = false,
                     onOptionSelected = viewModel::onSecondResponse,
                     modifier = modifier,
                     "1"
@@ -110,6 +112,7 @@ fun SurveyRoute(
 
                 SurveyQuestion.THIRD -> OneChoiceQuestion(
                     selectedAnswer = viewModel.thirdResponse,
+                    withImage = true,
                     onOptionSelected = viewModel::onThirdResponse,
                     modifier = modifier,
                     "2"
@@ -117,6 +120,7 @@ fun SurveyRoute(
 
                 SurveyQuestion.FOURTH -> OneChoiceQuestion(
                     selectedAnswer = viewModel.fourthResponse,
+                    withImage = false,
                     onOptionSelected = viewModel::onFourthResponse,
                     modifier = modifier,
                     "3"
@@ -125,6 +129,7 @@ fun SurveyRoute(
                 SurveyQuestion.FIFTH ->
                     OneChoiceQuestion(
                         selectedAnswer = viewModel.fifthResponse,
+                        withImage = false,
                         onOptionSelected = viewModel::onFifthResponse,
                         modifier = modifier,
                         "4"
