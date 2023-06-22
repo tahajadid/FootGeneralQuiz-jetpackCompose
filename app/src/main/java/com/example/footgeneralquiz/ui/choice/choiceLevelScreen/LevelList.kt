@@ -28,12 +28,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.footgeneralquiz.R
 import com.example.footgeneralquiz.data.Level
-import com.example.footgeneralquiz.theme.ChallengeFontFamily
 import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
+import com.example.footgeneralquiz.theme.FtyFontFamily
 import com.example.footgeneralquiz.theme.Gold2
 import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green1Unselected
-import com.example.footgeneralquiz.util.Constants.LIST_OF_LEVELS
+import com.example.footgeneralquiz.util.Constants.LIST_OF_THREE_LEVELS
+import com.example.footgeneralquiz.util.Constants.LIST_OF_TWO_LEVELS
+import com.example.footgeneralquiz.util.choiceSelected
 import com.example.footgeneralquiz.util.levelSelected
 
 @Composable
@@ -48,7 +50,11 @@ fun LevelList(
     ) {
         Spacer(Modifier.height(16.dp))
 
-        LIST_OF_LEVELS.forEach { it ->
+        val listOfLevels =
+            if (choiceSelected.equals("0") || choiceSelected.equals("1")) LIST_OF_TWO_LEVELS
+            else LIST_OF_THREE_LEVELS
+
+        listOfLevels.forEach { it ->
             val selected = it == selectedLevel
             LevelItemView(
                 onItemSelected = {
@@ -115,11 +121,11 @@ fun LevelItemView(
             )
 
             Text(
-                text = LIST_OF_LEVELS[index].title.toString(),
+                text = LIST_OF_THREE_LEVELS[index].title.toString(),
                 fontWeight = FontWeight.Bold,
                 fontSize = 22.sp,
                 color = Gold2,
-                fontFamily = ChallengeFontFamily,
+                fontFamily = FtyFontFamily,
                 textAlign = TextAlign.Center
             )
         }

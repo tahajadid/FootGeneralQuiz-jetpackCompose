@@ -37,12 +37,10 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import com.example.footgeneralquiz.R
-import com.example.footgeneralquiz.theme.BalloonFontFamily
 import com.example.footgeneralquiz.theme.Blue3
-import com.example.footgeneralquiz.theme.ChallengeFontFamily
 import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
+import com.example.footgeneralquiz.theme.FtyFontFamily
 import com.example.footgeneralquiz.theme.Gold2
-import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green2
 import com.example.footgeneralquiz.theme.Green3
 import com.example.footgeneralquiz.util.supportWideScreen
@@ -73,7 +71,8 @@ fun SurveyResultScreen(
                 ) {
                     Text(
                         text = stringResource(id = R.string.done),
-                        color = Blue3
+                        color = Blue3,
+                        fontFamily = FtyFontFamily
                     )
                 }
             }
@@ -145,9 +144,9 @@ private fun SurveyResult(
         Text(
             text = "Result",
             fontWeight = FontWeight.Bold,
-            fontSize = 40.sp,
+            fontSize = 50.sp,
             color = Gold2,
-            fontFamily = ChallengeFontFamily,
+            fontFamily = FtyFontFamily,
             modifier = Modifier
                 .layoutId("title")
         )
@@ -158,7 +157,7 @@ private fun SurveyResult(
             fontSize = 26.sp,
             color = Blue3,
             fontWeight = FontWeight.Bold,
-            fontFamily = BalloonFontFamily,
+            fontFamily = FtyFontFamily,
             modifier = Modifier.padding(horizontal = 20.dp)
                 .layoutId("result")
         )

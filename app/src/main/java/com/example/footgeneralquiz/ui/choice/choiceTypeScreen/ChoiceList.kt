@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.footgeneralquiz.R
 import com.example.footgeneralquiz.data.Choice
+import com.example.footgeneralquiz.theme.FtyFontFamily
 import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green1Unselected
 import com.example.footgeneralquiz.util.Constants.LIST_OF_CHOICES
@@ -117,6 +118,7 @@ fun ChoiceItemView(
                 text = LIST_OF_CHOICES[index].title.toString(),
                 fontWeight = FontWeight.Bold,
                 fontSize = 20.sp,
+                fontFamily = FtyFontFamily,
                 color = Color(0xFFFFFFFF),
                 textAlign = TextAlign.Center,
                 modifier = Modifier.padding(16.dp)

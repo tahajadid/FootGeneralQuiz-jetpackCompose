@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.footgeneralquiz.theme.Blue3
+import com.example.footgeneralquiz.theme.FtyFontFamily
 import com.example.footgeneralquiz.theme.Green2
 
 @Composable
@@ -42,6 +43,7 @@ private fun QuestionTitle(
     Text(
         text = title,
         style = MaterialTheme.typography.titleMedium,
+        fontFamily = FtyFontFamily,
         color = Green2,
         modifier = modifier
             .fillMaxWidth()

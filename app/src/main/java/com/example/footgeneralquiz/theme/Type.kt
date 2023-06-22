@@ -16,6 +16,14 @@ val BalloonFontFamily = FontFamily(
     )
 )
 
+// Balloon Font
+val FtyFontFamily = FontFamily(
+    listOf(
+        Font(R.font.fty_strategyl, FontWeight.Normal),
+        Font(R.font.fty_strategyl, FontWeight.Bold)
+    )
+)
+
 // Challenge Font
 val ChallengeFontFamily = FontFamily(
     listOf(
