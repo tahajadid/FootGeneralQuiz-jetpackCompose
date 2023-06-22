@@ -29,13 +29,11 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.footgeneralquiz.R
 import com.example.footgeneralquiz.theme.Blue1
 import com.example.footgeneralquiz.theme.Blue1Unselected
-import com.example.footgeneralquiz.theme.Blue2
 import com.example.footgeneralquiz.theme.Green2
 import com.example.footgeneralquiz.theme.stronglyDeemphasizedAlpha
 import com.example.footgeneralquiz.ui.survey.SurveyScreenData
@@ -171,8 +169,10 @@ fun SurveyBottomBar(
                         .height(48.dp),
                     onClick = onPreviousPressed
                 ) {
-                    Text(text = stringResource(id = R.string.previous),
-                    color = Blue1)
+                    Text(
+                        text = stringResource(id = R.string.previous),
+                        color = Blue1
+                    )
                 }
                 Spacer(modifier = Modifier.width(16.dp))
             }
@@ -196,8 +196,10 @@ fun SurveyBottomBar(
                     colors = ButtonDefaults.outlinedButtonColors(containerColor = Blue1, disabledContainerColor = Blue1Unselected),
                     enabled = isNextButtonEnabled
                 ) {
-                    Text(text = stringResource(id = R.string.next),
-                    color = Green2)
+                    Text(
+                        text = stringResource(id = R.string.next),
+                        color = Green2
+                    )
                 }
             }
         }
