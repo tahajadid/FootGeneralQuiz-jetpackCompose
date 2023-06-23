@@ -10,6 +10,7 @@ import com.example.footgeneralquiz.util.levelSelected
 @Composable
 fun OneChoiceQuestion(
     selectedAnswer: PossibleAnswer?,
+    withImage: Boolean,
     onOptionSelected: (PossibleAnswer) -> Unit,
     modifier: Modifier = Modifier,
     indexQuestion: String
@@ -18,6 +19,7 @@ fun OneChoiceQuestion(
     SingleChoiceQuestion(
         title = question.titleQuestion.toString(),
         question = question,
+        withImage = withImage,
         selectedAnswer = selectedAnswer,
         onOptionSelected = onOptionSelected,
         modifier = modifier

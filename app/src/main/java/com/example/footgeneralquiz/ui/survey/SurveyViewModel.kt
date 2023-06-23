@@ -3,6 +3,7 @@ package com.example.footgeneralquiz.ui.survey
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.footgeneralquiz.data.PossibleAnswer
+import com.example.footgeneralquiz.util.choiceSelected
 
 class SurveyViewModel() : ViewModel() {
 
@@ -45,6 +46,8 @@ class SurveyViewModel() : ViewModel() {
     private val _isNextEnabled = mutableStateOf(false)
     val isNextEnabled: Boolean
         get() = _isNextEnabled.value
+
+    val isQuestionWithImage: Boolean get() = choiceSelected.equals("0") || choiceSelected.equals("1")
 
     /**
      * Returns true if the ViewModel handled the back press (i.e., it went back one question)
