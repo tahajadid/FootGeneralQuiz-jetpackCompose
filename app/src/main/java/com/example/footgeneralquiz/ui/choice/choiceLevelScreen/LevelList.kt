@@ -51,7 +51,7 @@ fun LevelList(
         Spacer(Modifier.height(16.dp))
 
         val listOfLevels =
-            if (choiceSelected.equals("0") || choiceSelected.equals("1")) LIST_OF_TWO_LEVELS
+            if (choiceSelected.equals("1") || choiceSelected.equals("2")) LIST_OF_TWO_LEVELS
             else LIST_OF_THREE_LEVELS
 
         listOfLevels.forEach { it ->
