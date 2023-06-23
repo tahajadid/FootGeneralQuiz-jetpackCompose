@@ -24,6 +24,7 @@ import com.example.footgeneralquiz.data.PossibleAnswer
 import com.example.footgeneralquiz.data.Question
 import com.example.footgeneralquiz.theme.Green1Unselected
 import com.example.footgeneralquiz.theme.Green2
+import com.example.footgeneralquiz.util.indexQuestion
 import com.example.footgeneralquiz.util.userAnswer
 
 @Composable
@@ -38,7 +39,8 @@ fun SingleChoiceQuestion(
     QuestionWrapper(
         title = title,
         modifier = modifier.selectableGroup(),
-        withImage = withImage
+        withImage = withImage,
+        questionId = question.idQuestion
     ) {
         question.possibleAnswers.forEach {
             val selected = it == selectedAnswer
@@ -49,12 +51,16 @@ fun SingleChoiceQuestion(
                 onOptionSelected = {
                     onOptionSelected(it)
                     // change the values on the internal variable
-                    userAnswer[question.idQuestion!!.toInt()].selectedAnswer = it.idPossibleAnswer.toString()
-                    userAnswer[question.idQuestion!!.toInt()].correctAnswer = question.idCorrectAnswer.toString()
+                    userAnswer[indexQuestion].selectedAnswer = it.idPossibleAnswer.toString()
+                    userAnswer[indexQuestion].correctAnswer = question.idCorrectAnswer.toString()
 
+                    indexQuestion++
+
+                    /*
                     Log.d("TestonOptionSelected", "question id :" + question.idQuestion!!.toInt())
                     Log.d("TestonOptionSelected", "correct Answer id :" + question.idCorrectAnswer!!.toInt())
                     Log.d("TestonOptionSelected", "AnswerSelected id :" + it.idPossibleAnswer)
+                     */
                 }
             )
         }

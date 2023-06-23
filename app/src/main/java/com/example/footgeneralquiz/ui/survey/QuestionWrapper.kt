@@ -16,16 +16,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.example.footgeneralquiz.R
 import com.example.footgeneralquiz.theme.Blue3
 import com.example.footgeneralquiz.theme.FtyFontFamily
 import com.example.footgeneralquiz.theme.Green2
+import com.example.footgeneralquiz.util.QuestionDelivery
 
 @Composable
 fun QuestionWrapper(
     title: String,
     modifier: Modifier = Modifier,
     withImage: Boolean,
+    questionId: Int,
     content: @Composable () -> Unit
 ) {
     Column(
@@ -38,7 +39,7 @@ fun QuestionWrapper(
         Spacer(Modifier.height(18.dp))
         if (withImage) {
             Image(
-                painter = painterResource(id = R.drawable.logo_splash),
+                painter = painterResource(id = QuestionDelivery.getTheRightImage(questionId)),
                 modifier = Modifier
                     .height(200.dp)
                     .fillMaxWidth(),

@@ -16,3 +16,6 @@ internal var userAnswer = listOf(
     UserAnswer(3),
     UserAnswer(4)
 )
+
+// Index Question
+internal var indexQuestion = 0
