@@ -5,6 +5,8 @@ import com.example.footgeneralquiz.data.Question
 import com.example.footgeneralquiz.data.UserAnswer
 import com.example.footgeneralquiz.util.question.FlagQuestions.QUESTION_BUNDLE_5_0
 import com.example.footgeneralquiz.util.question.FlagQuestions.QUESTION_BUNDLE_5_1
+import com.example.footgeneralquiz.util.question.TeamQuestions.QUESTION_BUNDLE_3_0
+import com.example.footgeneralquiz.util.question.TeamQuestions.QUESTION_BUNDLE_3_1
 import com.example.footgeneralquiz.util.question.ListOfQuestions.QUESTION_BUNDLE_0_0
 import com.example.footgeneralquiz.util.question.ListOfQuestions.QUESTION_BUNDLE_0_1
 import com.example.footgeneralquiz.util.question.ListOfQuestions.QUESTION_BUNDLE_0_2
@@ -22,6 +24,7 @@ object QuestionDelivery {
                 if (idType == "0") return QUESTION_BUNDLE_0_0[indexQuestion.toInt()]
                 else if (idType == "1") return QUESTION_BUNDLE_1_0[indexQuestion.toInt()]
                 else if (idType == "2") return QUESTION_BUNDLE_2_0[indexQuestion.toInt()]
+                else if (idType == "3") return QUESTION_BUNDLE_3_0[indexQuestion.toInt()]
                 else if (idType == "5") return QUESTION_BUNDLE_5_0[indexQuestion.toInt()]
                 else return QUESTION_BUNDLE_1_0[indexQuestion.toInt()]
             }
@@ -29,6 +32,7 @@ object QuestionDelivery {
                 if (idType == "0") return QUESTION_BUNDLE_0_1[indexQuestion.toInt()]
                 else if (idType == "1") return QUESTION_BUNDLE_1_1[indexQuestion.toInt()]
                 else if (idType == "2") return QUESTION_BUNDLE_2_1[indexQuestion.toInt()]
+                else if (idType == "3") return QUESTION_BUNDLE_3_1[indexQuestion.toInt()]
                 else if (idType == "5") return QUESTION_BUNDLE_5_1[indexQuestion.toInt()]
                 else return QUESTION_BUNDLE_1_1[indexQuestion.toInt()]
             }
@@ -60,15 +64,27 @@ object QuestionDelivery {
             12 -> return R.drawable.question8
             13 -> return R.drawable.question9
             14 -> return R.drawable.question10
-            15 -> return R.drawable.flag1
-            16 -> return R.drawable.flag2
-            17 -> return R.drawable.flag3
-            18 -> return R.drawable.flag4
-            19 -> return R.drawable.flag5
-            20 -> return R.drawable.flag6
-            21 -> return R.drawable.flag7
-            22 -> return R.drawable.flag8
-            23 -> return R.drawable.flag9
+            // teams
+            15 -> return R.drawable.team1
+            16 -> return R.drawable.team2
+            17 -> return R.drawable.team3
+            18 -> return R.drawable.team4
+            19 -> return R.drawable.team5
+            20 -> return R.drawable.team6
+            21 -> return R.drawable.team7
+            22 -> return R.drawable.team8
+            23 -> return R.drawable.team9
+            24 -> return R.drawable.team10
+            // flags
+            25 -> return R.drawable.flag1
+            26 -> return R.drawable.flag2
+            27 -> return R.drawable.flag3
+            28 -> return R.drawable.flag4
+            29 -> return R.drawable.flag5
+            30 -> return R.drawable.flag6
+            31 -> return R.drawable.flag7
+            32 -> return R.drawable.flag8
+            33 -> return R.drawable.flag9
             else -> return R.drawable.flag10
         }
     }

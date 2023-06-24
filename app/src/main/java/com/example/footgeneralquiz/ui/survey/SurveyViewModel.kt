@@ -49,7 +49,8 @@ class SurveyViewModel() : ViewModel() {
     val isNextEnabled: Boolean
         get() = _isNextEnabled.value
 
-    val isQuestionWithImage: Boolean get() = typeSelected.equals("2") || typeSelected.equals("5")
+    val isQuestionWithImage: Boolean get() = typeSelected.equals("2") || typeSelected.equals("3") ||
+        typeSelected.equals("5")
 
     /**
      * Returns true if the ViewModel handled the back press (i.e., it went back one question)

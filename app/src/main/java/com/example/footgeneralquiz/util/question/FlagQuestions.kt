@@ -11,159 +11,159 @@ object FlagQuestions {
 
     // -- 1 --
 
-    var POSSIBLE_ANSWERS_15 = listOf(
-        PossibleAnswer(0, "Parma"),
-        PossibleAnswer(1, "Cagliari"),
-        PossibleAnswer(2, "Bari"),
-        PossibleAnswer(3, "Genoa")
+    var POSSIBLE_ANSWERS_25 = listOf(
+        PossibleAnswer(0, "Cuba"),
+        PossibleAnswer(1, "Czech Republic"),
+        PossibleAnswer(2, "Chile"),
+        PossibleAnswer(3, "Costa Rica")
     )
 
-    var QUESTION_15 = Question(
-        15,
-        "Name of the player ?",
+    var QUESTION_25 = Question(
+        25,
+        "This Flag of which country?",
         3,
-        POSSIBLE_ANSWERS_15
+        POSSIBLE_ANSWERS_25
     )
 
     // -- 2 --
-    var POSSIBLE_ANSWERS_16 = listOf(
-        PossibleAnswer(0, "VfL Wolfsburg"),
-        PossibleAnswer(1, "Werder Bremen"),
-        PossibleAnswer(2, "FC Augsburg"),
-        PossibleAnswer(3, "FC Union Berlin")
+    var POSSIBLE_ANSWERS_26 = listOf(
+        PossibleAnswer(0, "Laos"),
+        PossibleAnswer(1, "Belize"),
+        PossibleAnswer(2, "Bangladesh"),
+        PossibleAnswer(3, "Mozambique")
     )
 
-    var QUESTION_16 = Question(
-        16,
-        "Name of the player ?",
-        1,
-        POSSIBLE_ANSWERS_16
+    var QUESTION_26 = Question(
+        26,
+        "This Flag of which country?",
+        2,
+        POSSIBLE_ANSWERS_26
     )
 
     // -- 3 ---
-    var POSSIBLE_ANSWERS_17 = listOf(
-        PossibleAnswer(0, "Bastia"),
-        PossibleAnswer(1, "Brest"),
-        PossibleAnswer(2, "Strasbourg"),
-        PossibleAnswer(3, "Bordeaux")
+    var POSSIBLE_ANSWERS_27 = listOf(
+        PossibleAnswer(0, "Netherlands"),
+        PossibleAnswer(1, "France"),
+        PossibleAnswer(2, "Luxembourg"),
+        PossibleAnswer(3, "Liechtenstein")
     )
 
-    var QUESTION_17 = Question(
-        17,
-        "Name of the player ?",
-        1,
-        POSSIBLE_ANSWERS_17
+    var QUESTION_27 = Question(
+        27,
+        "This Flag of which country?",
+        2,
+        POSSIBLE_ANSWERS_27
     )
 
     // -- 4 --
-    var POSSIBLE_ANSWERS_18 = listOf(
-        PossibleAnswer(0, "Real Zaragoza"),
-        PossibleAnswer(1, "Eibar"),
-        PossibleAnswer(2, "FC Cartagena"),
-        PossibleAnswer(3, "Granada")
+    var POSSIBLE_ANSWERS_28 = listOf(
+        PossibleAnswer(0, "Ireland"),
+        PossibleAnswer(1, "Ivory Coast"),
+        PossibleAnswer(2, "Inde"),
+        PossibleAnswer(3, "Estonia")
     )
 
-    var QUESTION_18 = Question(
-        18,
-        "Name of the player ?",
-        3,
-        POSSIBLE_ANSWERS_18
+    var QUESTION_28 = Question(
+        28,
+        "This Flag of which country?",
+        0,
+        POSSIBLE_ANSWERS_28
     )
 
     // -- 5 --
 
-    var POSSIBLE_ANSWERS_19 = listOf(
-        PossibleAnswer(0, "Bologna"),
-        PossibleAnswer(1, "Brescia"),
-        PossibleAnswer(2, "Bari"),
-        PossibleAnswer(3, "Benevento")
+    var POSSIBLE_ANSWERS_29 = listOf(
+        PossibleAnswer(0, "Estonia"),
+        PossibleAnswer(1, "Indonesia"),
+        PossibleAnswer(2, "Vietnam"),
+        PossibleAnswer(3, "Poland")
     )
 
-    var QUESTION_19 = Question(
-        19,
-        "Name of the player ?",
-        0,
-        POSSIBLE_ANSWERS_19
+    var QUESTION_29 = Question(
+        29,
+        "This Flag of which country?",
+        1,
+        POSSIBLE_ANSWERS_29
     )
 
     // -- 6 --
 
-    var POSSIBLE_ANSWERS_20 = listOf(
-        PossibleAnswer(0, "Sporting Gijon"),
-        PossibleAnswer(1, "FC Andorra"),
-        PossibleAnswer(2, "Ponferradina"),
-        PossibleAnswer(3, "FC Cartagena")
+    var POSSIBLE_ANSWERS_30 = listOf(
+        PossibleAnswer(0, "Sri Lanka"),
+        PossibleAnswer(1, "Honduras"),
+        PossibleAnswer(2, "Ivory Coast"),
+        PossibleAnswer(3, "Thaïlande")
     )
 
-    var QUESTION_20 = Question(
-        20,
-        "Name of the player ?",
+    var QUESTION_30 = Question(
+        30,
+        "This Flag of which country?",
         0,
-        POSSIBLE_ANSWERS_20
+        POSSIBLE_ANSWERS_30
     )
 
     // -- 7 --
 
-    var POSSIBLE_ANSWERS_21 = listOf(
-        PossibleAnswer(0, "FC Augsburg Fellaini"),
-        PossibleAnswer(1, "Fribourg"),
-        PossibleAnswer(2, "FC Köln"),
-        PossibleAnswer(3, "SV Werder Bremen")
+    var POSSIBLE_ANSWERS_31 = listOf(
+        PossibleAnswer(0, "Uruguay"),
+        PossibleAnswer(1, "Nepal"),
+        PossibleAnswer(2, "Laos"),
+        PossibleAnswer(3, "Syria")
     )
 
-    var QUESTION_21 = Question(
-        21,
-        "Name of the player ?",
+    var QUESTION_31 = Question(
+        31,
+        "This Flag of which country?",
         1,
-        POSSIBLE_ANSWERS_21
+        POSSIBLE_ANSWERS_31
     )
 
     // -- 8 --
 
-    var POSSIBLE_ANSWERS_22 = listOf(
-        PossibleAnswer(0, "Fluminense"),
-        PossibleAnswer(1, "Flamengo"),
-        PossibleAnswer(2, "FC Botafogo"),
-        PossibleAnswer(3, "Fortaleza")
+    var POSSIBLE_ANSWERS_32 = listOf(
+        PossibleAnswer(0, "Estonia"),
+        PossibleAnswer(1, "Laos"),
+        PossibleAnswer(2, "Brunei"),
+        PossibleAnswer(3, "Cambodia")
     )
 
-    var QUESTION_22 = Question(
-        22,
-        "Name of the player ?",
-        1,
-        POSSIBLE_ANSWERS_22
+    var QUESTION_32 = Question(
+        32,
+        "This Flag of which country?",
+        3,
+        POSSIBLE_ANSWERS_32
     )
 
     // -- 9 --
 
-    var POSSIBLE_ANSWERS_23 = listOf(
-        PossibleAnswer(0, "Fenerbahce"),
-        PossibleAnswer(1, "Adana Demirspor"),
-        PossibleAnswer(2, "Fatih Karagümrük"),
-        PossibleAnswer(3, "Trabzonspor")
+    var POSSIBLE_ANSWERS_33 = listOf(
+        PossibleAnswer(0, "Laos"),
+        PossibleAnswer(1, "Belize"),
+        PossibleAnswer(2, "Mozambique"),
+        PossibleAnswer(3, "Bangladesh")
     )
 
-    var QUESTION_23 = Question(
-        23,
-        "Name of the player ?",
-        3,
-        POSSIBLE_ANSWERS_23
+    var QUESTION_33 = Question(
+        33,
+        "This Flag of which country?",
+        1,
+        POSSIBLE_ANSWERS_33
     )
 
     // -- 10 --
 
-    var POSSIBLE_ANSWERS_24 = listOf(
-        PossibleAnswer(0, "VfL Wolfsburg"),
-        PossibleAnswer(1, "FC Augsburg"),
-        PossibleAnswer(2, "Werder Bremen"),
-        PossibleAnswer(3, "FC Union Berlin")
+    var POSSIBLE_ANSWERS_34 = listOf(
+        PossibleAnswer(0, "Vatican City"),
+        PossibleAnswer(1, "Malta"),
+        PossibleAnswer(2, "Luxembourg"),
+        PossibleAnswer(3, "Liechtenstein")
     )
 
-    var QUESTION_24 = Question(
-        24,
-        "Name of the player ?",
-        2,
-        POSSIBLE_ANSWERS_24
+    var QUESTION_34 = Question(
+        34,
+        "This Flag of which country?",
+        0,
+        POSSIBLE_ANSWERS_34
     )
 
     /**
@@ -171,18 +171,18 @@ object FlagQuestions {
      */
 
     var QUESTION_BUNDLE_5_0 = listOf(
-        QUESTION_15,
-        QUESTION_16,
-        QUESTION_17,
-        QUESTION_18,
-        QUESTION_19
+        QUESTION_25,
+        QUESTION_26,
+        QUESTION_27,
+        QUESTION_28,
+        QUESTION_29
     )
 
     var QUESTION_BUNDLE_5_1 = listOf(
-        QUESTION_20,
-        QUESTION_21,
-        QUESTION_22,
-        QUESTION_23,
-        QUESTION_24
+        QUESTION_30,
+        QUESTION_31,
+        QUESTION_32,
+        QUESTION_33,
+        QUESTION_34
     )
 }
