@@ -3,7 +3,7 @@ package com.example.footgeneralquiz.util
 import com.example.footgeneralquiz.data.UserAnswer
 
 // Choice selected by the user
-internal var choiceSelected = ""
+internal var typeSelected = ""
 
 // Level selected by the user
 internal var levelSelected = ""
