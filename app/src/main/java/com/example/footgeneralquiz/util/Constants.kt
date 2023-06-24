@@ -8,9 +8,9 @@ object Constants {
     var LIST_OF_CHOICES = arrayListOf(
         Choice(0, "World Cup", "WORLD_CUP"),
         Choice(1, "EUFA", "LEAGUE_EU"),
-        Choice(2, "Teams", "TEAMS"),
-        Choice(3, "Awards", "AWARDS"),
-        Choice(4, "Players", "PLAYERS"),
+        Choice(2, "Players", "PLAYERS"),
+        Choice(3, "Teams", "TEAMS"),
+        Choice(4, "Awards", "AWARDS"),
         Choice(5, "Flags", "FLAGS")
     )
 
