@@ -1,4 +1,4 @@
-package com.example.footgeneralquiz.util
+package com.example.footgeneralquiz.util.question
 
 import com.example.footgeneralquiz.data.PossibleAnswer
 import com.example.footgeneralquiz.data.Question

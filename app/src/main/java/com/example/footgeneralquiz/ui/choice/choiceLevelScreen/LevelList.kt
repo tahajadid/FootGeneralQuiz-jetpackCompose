@@ -35,7 +35,7 @@ import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green1Unselected
 import com.example.footgeneralquiz.util.Constants.LIST_OF_THREE_LEVELS
 import com.example.footgeneralquiz.util.Constants.LIST_OF_TWO_LEVELS
-import com.example.footgeneralquiz.util.choiceSelected
+import com.example.footgeneralquiz.util.typeSelected
 import com.example.footgeneralquiz.util.levelSelected
 
 @Composable
@@ -51,7 +51,7 @@ fun LevelList(
         Spacer(Modifier.height(16.dp))
 
         val listOfLevels =
-            if (choiceSelected.equals("2") || choiceSelected.equals("5")) LIST_OF_TWO_LEVELS
+            if (typeSelected.equals("2") || typeSelected.equals("5")) LIST_OF_TWO_LEVELS
             else LIST_OF_THREE_LEVELS
 
         listOfLevels.forEach { it ->

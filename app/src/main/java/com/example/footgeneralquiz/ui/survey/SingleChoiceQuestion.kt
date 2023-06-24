@@ -1,6 +1,5 @@
 package com.example.footgeneralquiz.ui.survey
 
-import android.util.Log
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -24,8 +23,6 @@ import com.example.footgeneralquiz.data.PossibleAnswer
 import com.example.footgeneralquiz.data.Question
 import com.example.footgeneralquiz.theme.Green1Unselected
 import com.example.footgeneralquiz.theme.Green2
-import com.example.footgeneralquiz.util.indexQuestion
-import com.example.footgeneralquiz.util.userAnswer
 
 @Composable
 fun SingleChoiceQuestion(
@@ -33,7 +30,7 @@ fun SingleChoiceQuestion(
     question: Question,
     withImage: Boolean,
     selectedAnswer: PossibleAnswer?,
-    onOptionSelected: (PossibleAnswer) -> Unit,
+    onOptionSelected: (PossibleAnswer, Question) -> Unit,
     modifier: Modifier = Modifier
 ) {
     QuestionWrapper(
@@ -49,12 +46,8 @@ fun SingleChoiceQuestion(
                 text = it.title.toString(),
                 selected = selected,
                 onOptionSelected = {
-                    onOptionSelected(it)
+                    onOptionSelected(it, question)
                     // change the values on the internal variable
-                    userAnswer[indexQuestion].selectedAnswer = it.idPossibleAnswer.toString()
-                    userAnswer[indexQuestion].correctAnswer = question.idCorrectAnswer.toString()
-
-                    indexQuestion++
 
                     /*
                     Log.d("TestonOptionSelected", "question id :" + question.idQuestion!!.toInt())

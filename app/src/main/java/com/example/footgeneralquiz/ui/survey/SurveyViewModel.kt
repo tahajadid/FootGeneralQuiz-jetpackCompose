@@ -3,7 +3,9 @@ package com.example.footgeneralquiz.ui.survey
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.footgeneralquiz.data.PossibleAnswer
-import com.example.footgeneralquiz.util.choiceSelected
+import com.example.footgeneralquiz.data.Question
+import com.example.footgeneralquiz.util.typeSelected
+import com.example.footgeneralquiz.util.userAnswer
 
 class SurveyViewModel() : ViewModel() {
 
@@ -47,7 +49,7 @@ class SurveyViewModel() : ViewModel() {
     val isNextEnabled: Boolean
         get() = _isNextEnabled.value
 
-    val isQuestionWithImage: Boolean get() = choiceSelected.equals("2") || choiceSelected.equals("5")
+    val isQuestionWithImage: Boolean get() = typeSelected.equals("2") || typeSelected.equals("5")
 
     /**
      * Returns true if the ViewModel handled the back press (i.e., it went back one question)
@@ -77,29 +79,54 @@ class SurveyViewModel() : ViewModel() {
         _surveyScreenData.value = createSurveyScreenData()
     }
 
-    fun onFirstResponse(possibleAnswer: PossibleAnswer) {
+    fun onFirstResponse(possibleAnswer: PossibleAnswer, question: Question) {
         _firstResponse.value = possibleAnswer
         _isNextEnabled.value = getIsNextEnabled()
+        changeUserResponse(
+            possibleAnswer.idPossibleAnswer.toString(),
+            question.idCorrectAnswer.toString()
+        )
     }
 
-    fun onSecondResponse(possibleAnswer: PossibleAnswer) {
+    fun onSecondResponse(possibleAnswer: PossibleAnswer, question: Question) {
         _secondResponse.value = possibleAnswer
         _isNextEnabled.value = getIsNextEnabled()
+        changeUserResponse(
+            possibleAnswer.idPossibleAnswer.toString(),
+            question.idCorrectAnswer.toString()
+        )
     }
 
-    fun onThirdResponse(possibleAnswer: PossibleAnswer) {
+    fun onThirdResponse(possibleAnswer: PossibleAnswer, question: Question) {
         _thirdResponse.value = possibleAnswer
         _isNextEnabled.value = getIsNextEnabled()
+        changeUserResponse(
+            possibleAnswer.idPossibleAnswer.toString(),
+            question.idCorrectAnswer.toString()
+        )
     }
 
-    fun onFourthResponse(possibleAnswer: PossibleAnswer) {
+    fun onFourthResponse(possibleAnswer: PossibleAnswer, question: Question) {
         _fourthResponse.value = possibleAnswer
         _isNextEnabled.value = getIsNextEnabled()
+        changeUserResponse(
+            possibleAnswer.idPossibleAnswer.toString(),
+            question.idCorrectAnswer.toString()
+        )
     }
 
-    fun onFifthResponse(possibleAnswer: PossibleAnswer) {
+    fun onFifthResponse(possibleAnswer: PossibleAnswer, question: Question) {
         _fifthResponse.value = possibleAnswer
         _isNextEnabled.value = getIsNextEnabled()
+        changeUserResponse(
+            possibleAnswer.idPossibleAnswer.toString(),
+            question.idCorrectAnswer.toString()
+        )
+    }
+
+    fun changeUserResponse(idPossibleAnswer: String, idCorrectAnswer: String) {
+        userAnswer[surveyScreenData!!.questionIndex].selectedAnswer = idPossibleAnswer
+        userAnswer[surveyScreenData!!.questionIndex].correctAnswer = idCorrectAnswer
     }
 
     private fun getIsNextEnabled(): Boolean {
