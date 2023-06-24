@@ -31,7 +31,7 @@ import com.example.footgeneralquiz.theme.FtyFontFamily
 import com.example.footgeneralquiz.theme.Green1
 import com.example.footgeneralquiz.theme.Green1Unselected
 import com.example.footgeneralquiz.util.Constants.LIST_OF_CHOICES
-import com.example.footgeneralquiz.util.choiceSelected
+import com.example.footgeneralquiz.util.typeSelected
 
 @Composable
 fun ChoiceList(
@@ -55,7 +55,7 @@ fun ChoiceList(
                 ChoiceItemView(
                     onItemSelected = {
                         // set the selected item
-                        choiceSelected = index.toString()
+                        typeSelected = index.toString()
                         onItemSelected(LIST_OF_CHOICES[index])
                     },
                     selectedAnswer = selected,
