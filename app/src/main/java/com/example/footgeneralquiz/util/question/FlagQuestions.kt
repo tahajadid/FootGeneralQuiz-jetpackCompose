@@ -170,7 +170,7 @@ object FlagQuestions {
      * Bundle of Players
      */
 
-    var QUESTION_BUNDLE_5_0 = listOf(
+    var QUESTION_BUNDLE_4_0 = listOf(
         QUESTION_25,
         QUESTION_26,
         QUESTION_27,
@@ -178,7 +178,7 @@ object FlagQuestions {
         QUESTION_29
     )
 
-    var QUESTION_BUNDLE_5_1 = listOf(
+    var QUESTION_BUNDLE_4_1 = listOf(
         QUESTION_30,
         QUESTION_31,
         QUESTION_32,
