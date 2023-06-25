@@ -7,226 +7,226 @@ object UefaQuestions {
 
     // -- 1 --
     var POSSIBLE_ANSWERS_1 = listOf(
-        PossibleAnswer(0, "Ronaldo"),
-        PossibleAnswer(1, "Gerd Müller"),
-        PossibleAnswer(2, "Just Fontaine"),
-        PossibleAnswer(3, "Gary Lineker")
+        PossibleAnswer(0, "Barcelona"),
+        PossibleAnswer(1, "Real Madrid"),
+        PossibleAnswer(2, "Bayern Munich"),
+        PossibleAnswer(3, "AC Milan")
     )
 
     var QUESTION_1 = Question(
         1,
-        "Who holds the record for the most goals scored in a single FIFA World Cup tournament?",
-        2,
+        "Which team has won the UEFA Champions League the most times?",
+        1,
         POSSIBLE_ANSWERS_1
     )
 
     // -- 2 --
     var POSSIBLE_ANSWERS_2 = listOf(
-        PossibleAnswer(0, "Spain"),
-        PossibleAnswer(1, "Netherlands"),
-        PossibleAnswer(2, "England"),
-        PossibleAnswer(3, "France")
+        PossibleAnswer(0, "Lionel Messi"),
+        PossibleAnswer(1, "Robert Lewandowski"),
+        PossibleAnswer(2, "Cristiano Ronaldo"),
+        PossibleAnswer(3, "Raúl")
     )
 
     var QUESTION_2 = Question(
         2,
-        "Which country has never won the FIFA World Cup?",
-        1,
+        "Who is the all-time leading goal scorer in the UEFA Champions League?",
+        2,
         POSSIBLE_ANSWERS_2
     )
 
     // -- 3 --
     var POSSIBLE_ANSWERS_3 = listOf(
-        PossibleAnswer(0, "Franz Beckenbauer"),
-        PossibleAnswer(1, "Diego Maradona"),
-        PossibleAnswer(2, "Zinedine Zidane"),
-        PossibleAnswer(3, "Michel Platini")
+        PossibleAnswer(0, "Arsenal"),
+        PossibleAnswer(1, "Atletico Madrid"),
+        PossibleAnswer(2, "Juventus"),
+        PossibleAnswer(3, "Valencia")
     )
 
     var QUESTION_3 = Question(
         3,
-        "Who is the only player to have won the FIFA World Cup as both a player and a coach?",
-        0,
+        "Which team has reached the most UEFA Champions League finals without winning the title?",
+        1,
         POSSIBLE_ANSWERS_3
     )
 
     // -- 4 --
     var POSSIBLE_ANSWERS_4 = listOf(
-        PossibleAnswer(0, "Italy"),
-        PossibleAnswer(1, "Germany"),
-        PossibleAnswer(2, "Brazil"),
-        PossibleAnswer(3, "Argentina")
+        PossibleAnswer(0, "Lionel Messi"),
+        PossibleAnswer(1, "Kylian Mbappé"),
+        PossibleAnswer(2, "Cristiano Ronaldo"),
+        PossibleAnswer(3, "Raúl")
     )
 
     var QUESTION_4 = Question(
         4,
-        "Which country has won the most consecutive FIFA World Cup titles?",
-        2,
+        "Who is the youngest goal scorer in a UEFA Champions League final?",
+        0,
         POSSIBLE_ANSWERS_4
     )
 
     // -- 5 --
     var POSSIBLE_ANSWERS_5 = listOf(
-        PossibleAnswer(0, "Brazil"),
-        PossibleAnswer(1, "Germany"),
-        PossibleAnswer(2, "Uruguay"),
-        PossibleAnswer(3, "England")
+        PossibleAnswer(0, "Manchester United"),
+        PossibleAnswer(1, "Atletico Madrid"),
+        PossibleAnswer(2, "Juventus"),
+        PossibleAnswer(3, "Valencia")
     )
 
     var QUESTION_5 = Question(
         5,
-        "Which country hosted the first-ever FIFA World Cup in 1930?",
+        "Which club has appeared in the most UEFA Champions League finals without winning the title?",
         2,
         POSSIBLE_ANSWERS_5
     )
 
     // -- 6 --
     var POSSIBLE_ANSWERS_6 = listOf(
-        PossibleAnswer(0, "Lionel Messi"),
-        PossibleAnswer(1, "Cristiano Ronaldo"),
-        PossibleAnswer(2, "Neymar"),
-        PossibleAnswer(3, "Thomas Müller")
+        PossibleAnswer(0, "Robert Lewandowski"),
+        PossibleAnswer(1, "Lionel Messi"),
+        PossibleAnswer(2, "Cristiano Ronaldo"),
+        PossibleAnswer(3, "Raúl")
     )
 
     var QUESTION_6 = Question(
         6,
-        "Who is the all-time leading assist provider in FIFA World Cup history?",
-        3,
+        "Which player holds the record for the most goals scored in a single UEFA Champions League season?",
+        0,
         POSSIBLE_ANSWERS_6
     )
 
     // -- 7 --
     var POSSIBLE_ANSWERS_7 = listOf(
-        PossibleAnswer(0, "Netherlands"),
-        PossibleAnswer(1, "Argentina"),
+        PossibleAnswer(0, "Spain"),
+        PossibleAnswer(1, "Italy"),
         PossibleAnswer(2, "Germany"),
-        PossibleAnswer(3, "Hungary")
+        PossibleAnswer(3, "England")
     )
 
     var QUESTION_7 = Question(
         7,
-        "Which country has finished as the runner-up in the FIFA World Cup the most times?",
+        " Which country has the most UEFA Champions League titles won by its clubs?",
         0,
         POSSIBLE_ANSWERS_7
     )
 
     // -- 8 --
     var POSSIBLE_ANSWERS_8 = listOf(
-        PossibleAnswer(0, "Hungary"),
-        PossibleAnswer(1, "Brazil"),
-        PossibleAnswer(2, "Germany"),
-        PossibleAnswer(3, "Argentina")
+        PossibleAnswer(0, "Neymar"),
+        PossibleAnswer(1, "Kevin De Bruyne"),
+        PossibleAnswer(2, "Cristiano Ronaldo"),
+        PossibleAnswer(3, "Raúl")
     )
 
     var QUESTION_8 = Question(
         8,
-        "Which country has the record for the most goals scored in a single FIFA World Cup tournament?",
-        2,
+        "Who holds the record for the most assists in a single UEFA Champions League season?",
+        1,
         POSSIBLE_ANSWERS_8
     )
 
     // -- 9 --
     var POSSIBLE_ANSWERS_9 = listOf(
-        PossibleAnswer(0, "Brazil"),
-        PossibleAnswer(1, "Italy"),
-        PossibleAnswer(2, "Germany"),
-        PossibleAnswer(3, "France")
+        PossibleAnswer(0, "Man United"),
+        PossibleAnswer(1, "Inter"),
+        PossibleAnswer(2, "Ajax"),
+        PossibleAnswer(3, "Chelsea")
     )
 
     var QUESTION_9 = Question(
         9,
-        "Which country has hosted the FIFA World Cup the most times?",
-        1,
+        "Who is the team that won 4 titles of the UEFA Cup?",
+        2,
         POSSIBLE_ANSWERS_9
     )
 
     // -- 10 --
     var POSSIBLE_ANSWERS_10 = listOf(
-        PossibleAnswer(0, "Pelé"),
-        PossibleAnswer(1, "Lionel Messi"),
-        PossibleAnswer(2, "Kylian Mbappé"),
-        PossibleAnswer(3, "Michael Owen")
+        PossibleAnswer(0, "Barcelona"),
+        PossibleAnswer(1, "Bayern Munich"),
+        PossibleAnswer(2, "Real Madrid"),
+        PossibleAnswer(3, "Manchester United")
     )
 
     var QUESTION_10 = Question(
         10,
-        "Who is the youngest player to have ever scored in a FIFA World Cup match?",
-        0,
+        "Which club holds the record for the most goals scored in a single UEFA Champions League season?",
+        2,
         POSSIBLE_ANSWERS_10
     )
 
     // -- 11 --
     var POSSIBLE_ANSWERS_11 = listOf(
-        PossibleAnswer(0, "Germany"),
-        PossibleAnswer(1, "Brazil"),
-        PossibleAnswer(2, "Argentina"),
-        PossibleAnswer(3, "Spain")
+        PossibleAnswer(0, "Cristiano Ronaldo"),
+        PossibleAnswer(1, "Lionel Messi"),
+        PossibleAnswer(2, "Andrés Iniesta"),
+        PossibleAnswer(3, "Xavi Hernández")
     )
 
     var QUESTION_11 = Question(
         11,
-        "Which country holds the record for the most consecutive World Cup finals appearances?",
-        1,
+        "Which player has won the most UEFA Champions League titles?",
+        0,
         POSSIBLE_ANSWERS_11
     )
 
     // -- 12 --
     var POSSIBLE_ANSWERS_12 = listOf(
-        PossibleAnswer(0, "Ronaldo"),
-        PossibleAnswer(1, "Miroslav Klose"),
-        PossibleAnswer(2, "Gary Lineker"),
-        PossibleAnswer(3, "Gabriel Batistuta")
+        PossibleAnswer(0, "Zlatan Ibrahimović"),
+        PossibleAnswer(1, "Clarence Seedorf"),
+        PossibleAnswer(2, "Cristiano Ronaldo"),
+        PossibleAnswer(3, "Arjen Robben")
     )
 
     var QUESTION_12 = Question(
         12,
-        "Who has won the Golden Boot award for being the top goal scorer in the most FIFA World Cup tournaments?",
+        "Which player has won the UEFA Champions League with three different clubs?",
         1,
         POSSIBLE_ANSWERS_12
     )
 
     // -- 13 --
     var POSSIBLE_ANSWERS_13 = listOf(
-        PossibleAnswer(0, "Brazil"),
-        PossibleAnswer(1, "Germany"),
-        PossibleAnswer(2, "Argentina"),
-        PossibleAnswer(3, "Spain")
+        PossibleAnswer(0, "Dortmund"),
+        PossibleAnswer(1, "Nottm Forest"),
+        PossibleAnswer(2, "Inter"),
+        PossibleAnswer(3, "Man United")
     )
 
     var QUESTION_13 = Question(
         13,
-        "Which country has scored the most goals in FIFA World Cup history?",
-        0,
+        "Who is the team that won 2 titles of UEFA Cup from this list of teams?",
+        2,
         POSSIBLE_ANSWERS_13
     )
 
     // -- 14 --
     var POSSIBLE_ANSWERS_14 = listOf(
-        PossibleAnswer(0, "Lionel Messi"),
-        PossibleAnswer(1, "Diego Maradona"),
-        PossibleAnswer(2, "Zinedine Zidane"),
-        PossibleAnswer(3, "Roberto Baggio")
+        PossibleAnswer(0, "Aston Villa"),
+        PossibleAnswer(1, "Feyenoord"),
+        PossibleAnswer(2, "Hamburg"),
+        PossibleAnswer(3, "Napoli")
     )
 
     var QUESTION_14 = Question(
         14,
-        "Who scored the famous 'Hand of God' goal in the 1986 FIFA World Cup?",
-        1,
+        "Who is the team that does not win the UEFA Cup?",
+        3,
         POSSIBLE_ANSWERS_14
     )
 
     // -- 15 --
     var POSSIBLE_ANSWERS_15 = listOf(
-        PossibleAnswer(0, "France"),
-        PossibleAnswer(1, "Croatia"),
-        PossibleAnswer(2, "Belgium"),
-        PossibleAnswer(3, "England")
+        PossibleAnswer(0, "Lionel Messi"),
+        PossibleAnswer(1, "Raúl"),
+        PossibleAnswer(2, "Patrick Kluivert"),
+        PossibleAnswer(3, "Cristiano Ronaldo")
     )
 
     var QUESTION_15 = Question(
         15,
-        "Which country won the FIFA World Cup as the host nation in 2018?",
-        0,
+        "Who is the youngest goal scorer in a UEFA Champions League final?",
+        2,
         POSSIBLE_ANSWERS_15
     )
 

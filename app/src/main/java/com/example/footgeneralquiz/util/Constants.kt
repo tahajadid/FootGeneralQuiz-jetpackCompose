@@ -10,8 +10,7 @@ object Constants {
         Choice(1, "EUFA", "LEAGUE_EU"),
         Choice(2, "Players", "PLAYERS"),
         Choice(3, "Teams", "TEAMS"),
-        Choice(4, "Awards", "AWARDS"),
-        Choice(5, "Flags", "FLAGS")
+        Choice(4, "Flags", "FLAGS")
     )
 
     // to be added later
