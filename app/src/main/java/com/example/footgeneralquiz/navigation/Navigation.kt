@@ -49,7 +49,11 @@ fun Navigation() {
             )
         ) {
             SurveyResultScreen(
-                onDonePressed = {},
+                onDonePressed = {
+                    navController.navigate(Screen.ChoiceTypeScreen.route) {
+                        popUpTo(0)
+                    }
+                },
                 result = it.arguments?.getString("name").toString()
             )
         }

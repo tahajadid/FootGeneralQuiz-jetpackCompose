@@ -3,18 +3,18 @@ package com.example.footgeneralquiz.util
 import com.example.footgeneralquiz.R
 import com.example.footgeneralquiz.data.Question
 import com.example.footgeneralquiz.data.UserAnswer
-import com.example.footgeneralquiz.util.question.FlagQuestions.QUESTION_BUNDLE_5_0
-import com.example.footgeneralquiz.util.question.FlagQuestions.QUESTION_BUNDLE_5_1
+import com.example.footgeneralquiz.util.question.FlagQuestions.QUESTION_BUNDLE_4_0
+import com.example.footgeneralquiz.util.question.FlagQuestions.QUESTION_BUNDLE_4_1
 import com.example.footgeneralquiz.util.question.TeamQuestions.QUESTION_BUNDLE_3_0
 import com.example.footgeneralquiz.util.question.TeamQuestions.QUESTION_BUNDLE_3_1
-import com.example.footgeneralquiz.util.question.ListOfQuestions.QUESTION_BUNDLE_0_0
-import com.example.footgeneralquiz.util.question.ListOfQuestions.QUESTION_BUNDLE_0_1
-import com.example.footgeneralquiz.util.question.ListOfQuestions.QUESTION_BUNDLE_0_2
-import com.example.footgeneralquiz.util.question.ListOfQuestions.QUESTION_BUNDLE_1_0
-import com.example.footgeneralquiz.util.question.ListOfQuestions.QUESTION_BUNDLE_1_1
-import com.example.footgeneralquiz.util.question.ListOfQuestions.QUESTION_BUNDLE_1_2
 import com.example.footgeneralquiz.util.question.PlayerQuestions.QUESTION_BUNDLE_2_0
 import com.example.footgeneralquiz.util.question.PlayerQuestions.QUESTION_BUNDLE_2_1
+import com.example.footgeneralquiz.util.question.UefaQuestions.QUESTION_BUNDLE_1_0
+import com.example.footgeneralquiz.util.question.UefaQuestions.QUESTION_BUNDLE_1_1
+import com.example.footgeneralquiz.util.question.UefaQuestions.QUESTION_BUNDLE_1_2
+import com.example.footgeneralquiz.util.question.WorldCupQuestions.QUESTION_BUNDLE_0_0
+import com.example.footgeneralquiz.util.question.WorldCupQuestions.QUESTION_BUNDLE_0_1
+import com.example.footgeneralquiz.util.question.WorldCupQuestions.QUESTION_BUNDLE_0_2
 
 object QuestionDelivery {
 
@@ -25,7 +25,7 @@ object QuestionDelivery {
                 else if (idType == "1") return QUESTION_BUNDLE_1_0[indexQuestion.toInt()]
                 else if (idType == "2") return QUESTION_BUNDLE_2_0[indexQuestion.toInt()]
                 else if (idType == "3") return QUESTION_BUNDLE_3_0[indexQuestion.toInt()]
-                else if (idType == "5") return QUESTION_BUNDLE_5_0[indexQuestion.toInt()]
+                else if (idType == "4") return QUESTION_BUNDLE_4_0[indexQuestion.toInt()]
                 else return QUESTION_BUNDLE_1_0[indexQuestion.toInt()]
             }
             "1" -> {
@@ -33,7 +33,7 @@ object QuestionDelivery {
                 else if (idType == "1") return QUESTION_BUNDLE_1_1[indexQuestion.toInt()]
                 else if (idType == "2") return QUESTION_BUNDLE_2_1[indexQuestion.toInt()]
                 else if (idType == "3") return QUESTION_BUNDLE_3_1[indexQuestion.toInt()]
-                else if (idType == "5") return QUESTION_BUNDLE_5_1[indexQuestion.toInt()]
+                else if (idType == "4") return QUESTION_BUNDLE_4_1[indexQuestion.toInt()]
                 else return QUESTION_BUNDLE_1_1[indexQuestion.toInt()]
             }
             else -> {
