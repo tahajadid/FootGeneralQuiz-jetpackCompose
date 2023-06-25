@@ -53,7 +53,7 @@ fun LevelList(
         val listOfLevels =
             if (typeSelected.equals("2") ||
                 typeSelected.equals("3") ||
-                typeSelected.equals("5")
+                typeSelected.equals("4")
             ) LIST_OF_TWO_LEVELS
             else LIST_OF_THREE_LEVELS
 

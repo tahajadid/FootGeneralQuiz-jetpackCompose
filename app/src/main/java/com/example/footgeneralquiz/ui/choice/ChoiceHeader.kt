@@ -37,14 +37,17 @@ fun ChoiceHeader(
             .fillMaxHeight(),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.choice),
-            contentDescription = null,
-            contentScale = ContentScale.Fit,
+        Text(
+            text = level,
+            fontWeight = FontWeight.Bold,
+            fontSize = 20.sp,
+            fontFamily = ChallengeFontFamily,
+            color = Gold,
+            textAlign = TextAlign.Center,
             modifier = Modifier
-                .height(36.dp)
-                .width(36.dp)
+                .padding(16.dp)
                 .weight(0.2f)
+
         )
 
         Text(
@@ -60,17 +63,15 @@ fun ChoiceHeader(
 
         )
 
-        Text(
-            text = level,
-            fontWeight = FontWeight.Bold,
-            fontSize = 20.sp,
-            fontFamily = ChallengeFontFamily,
-            color = Gold,
-            textAlign = TextAlign.Center,
+        Image(
+            painter = painterResource(id = R.drawable.info),
+            contentDescription = null,
+            contentScale = ContentScale.Fit,
             modifier = Modifier
-                .padding(16.dp)
+                .height(36.dp)
+                .width(36.dp)
                 .weight(0.2f)
-
+                .padding(6.dp)
         )
     }
 }

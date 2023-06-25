@@ -2,8 +2,8 @@ package com.example.footgeneralquiz.ui.survey.surveyScreen
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
-import android.util.Log
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -29,14 +29,13 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
-import com.example.footgeneralquiz.R
+import com.example.footgeneralquiz.theme.Blue2
 import com.example.footgeneralquiz.theme.Blue3
 import com.example.footgeneralquiz.theme.FootGeneralQuizTheme
 import com.example.footgeneralquiz.theme.FtyFontFamily
@@ -67,12 +66,15 @@ fun SurveyResultScreen(
                     onClick = onDonePressed,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 20.dp, vertical = 30.dp)
+                        .padding(horizontal = 20.dp, vertical = 30.dp),
+                    border = BorderStroke(2.dp, Blue2)
                 ) {
                     Text(
-                        text = stringResource(id = R.string.done),
-                        color = Blue3,
-                        fontFamily = FtyFontFamily
+                        text = "Retry",
+                        color = Blue2,
+                        letterSpacing = 4.sp,
+                        fontFamily = FtyFontFamily,
+                        fontSize = 20.sp
                     )
                 }
             }
@@ -146,13 +148,14 @@ private fun SurveyResult(
             fontWeight = FontWeight.Bold,
             fontSize = 50.sp,
             color = Gold2,
+            letterSpacing = 8.sp,
             fontFamily = FtyFontFamily,
             modifier = Modifier
                 .layoutId("title")
         )
 
         Text(
-            text = result,
+            text = "$result / 5",
             style = MaterialTheme.typography.titleMedium,
             fontSize = 26.sp,
             color = Blue3,
@@ -173,21 +176,37 @@ private fun SurveyResult(
         CircularProgressIndicator(
             progress = animatedProgress,
             strokeWidth = 14.dp,
-            color = Blue3,
+            color = Blue2,
             modifier = Modifier.height(140.dp).width(140.dp)
                 .layoutId("progress")
         )
 
         var stateOfLoop by remember { mutableStateOf(true) }
 
+        val maxValue = theRightMax(result)
+
         // Just once
         LaunchedEffect(Unit) {
             while (stateOfLoop) {
-                if (progress < 1f) progress += 0.2f
-                else stateOfLoop = false
+                if (progress < maxValue && !result.equals("0")) progress += 0.2f
+                else if (result.equals("0")) {
+                    progress = maxValue
+                    stateOfLoop = false
+                } else stateOfLoop = false
                 delay(200)
             }
         }
+    }
+}
+
+fun theRightMax(result: String): Float {
+    when (result) {
+        "0" -> return 0.05f
+        "1" -> return 0.2f
+        "2" -> return 0.4f
+        "3" -> return 0.6f
+        "4" -> return 0.8f
+        else -> return 1f
     }
 }
 
@@ -195,6 +214,6 @@ private fun SurveyResult(
 @Composable
 fun WelcomeScreenPreview() {
     FootGeneralQuizTheme {
-        SurveyResultScreen({}, "1 / 5")
+        SurveyResultScreen({}, "1")
     }
 }
