@@ -5,10 +5,6 @@ import com.example.footgeneralquiz.data.Question
 
 object TeamQuestions {
 
-    /**
-     * Flags Question
-     */
-
     // -- 1 --
 
     var POSSIBLE_ANSWERS_15 = listOf(
