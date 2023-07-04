@@ -49,7 +49,7 @@ import kotlinx.coroutines.delay
 @Composable
 fun SplashScreen(navController: NavController) {
     // A surface container using the 'background' color from the theme
-    val boxSize = with(LocalDensity.current) { 300.dp.toPx() }
+    val boxSize = with(LocalDensity.current) { 400.dp.toPx() }
     var visible by remember { mutableStateOf(false) }
     val density = LocalDensity.current
 
