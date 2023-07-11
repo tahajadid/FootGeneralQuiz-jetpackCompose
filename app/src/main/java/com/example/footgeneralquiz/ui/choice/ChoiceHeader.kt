@@ -63,6 +63,20 @@ fun ChoiceHeader(
 
         )
 
+        /*
+        var popupControl by remember { mutableStateOf(false) }
+        TextButton(onClick = { popupControl = true }) {
+            Text("Open normal popup")
+        }
+
+        if (popupControl) {
+            Popup {
+                // Composable content to be shown in the Popup
+            }
+        }
+
+         */
+
         Image(
             painter = painterResource(id = R.drawable.info),
             contentDescription = null,
