@@ -4,14 +4,14 @@ plugins {
 }
 
 android {
-    namespace 'com.example.footgeneralquiz'
+    namespace 'tahadeta.example.footgeneralquiz'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.footgeneralquiz"
+        applicationId "tahadeta.example.footgeneralquiz"
         minSdk 24
         targetSdk 33
-        versionCode 1
+        versionCode 2
         versionName "0.1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
