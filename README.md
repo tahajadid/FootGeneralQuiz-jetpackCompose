@@ -6,6 +6,6 @@
 
 <img src="/logoGithub.png"/>
 
-Foot General Quizz is a Native Android application to challange the people in their Football knowledge.
+Foot General Quizz is a Native Android application to challenge the people in their Football knowledge.
 
 This application was developed using [JetpackCompose](https://developer.android.com/jetpack/compose?hl=fr)
