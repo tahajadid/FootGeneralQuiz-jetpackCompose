@@ -2,6 +2,7 @@ package tahadeta.example.footgeneralquiz.ui.choice
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -10,6 +11,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -24,6 +29,7 @@ import tahadeta.example.footgeneralquiz.R
 import tahadeta.example.footgeneralquiz.theme.ChallengeFontFamily
 import tahadeta.example.footgeneralquiz.theme.FootGeneralQuizTheme
 import tahadeta.example.footgeneralquiz.theme.Gold
+import tahadeta.example.footgeneralquiz.ui.popup.InfoPopup
 
 @Composable
 fun ChoiceHeader(
@@ -37,6 +43,12 @@ fun ChoiceHeader(
             .fillMaxHeight(),
         verticalAlignment = Alignment.CenterVertically
     ) {
+        // variable to set the info popup
+        var infoPopupShown by remember { mutableStateOf(false) }
+        if (infoPopupShown) {
+            InfoPopup { infoPopupShown = false }
+        }
+
         Text(
             text = level,
             fontWeight = FontWeight.Bold,
@@ -60,22 +72,7 @@ fun ChoiceHeader(
             modifier = Modifier
                 .padding(6.dp)
                 .weight(0.6f)
-
         )
-
-        /*
-        var popupControl by remember { mutableStateOf(false) }
-        TextButton(onClick = { popupControl = true }) {
-            Text("Open normal popup")
-        }
-
-        if (popupControl) {
-            Popup {
-                // Composable content to be shown in the Popup
-            }
-        }
-
-         */
 
         Image(
             painter = painterResource(id = R.drawable.info),
@@ -86,6 +83,7 @@ fun ChoiceHeader(
                 .width(36.dp)
                 .weight(0.2f)
                 .padding(6.dp)
+                .clickable(onClick = { infoPopupShown = true })
         )
     }
 }
