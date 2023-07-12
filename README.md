@@ -5,3 +5,5 @@
 [![API](https://img.shields.io/badge/API-23%2B-brightgreen.svg?style=plastic)](https://android-arsenal.com/api?level=25)
 
 <img src="/logoGithub.png"/>
+
+Foot General Quizz is a Native Android application developed using [JetpackCompose](https://developer.android.com/jetpack/compose?hl=fr)
