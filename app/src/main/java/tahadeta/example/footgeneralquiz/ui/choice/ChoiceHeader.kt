@@ -59,7 +59,6 @@ fun ChoiceHeader(
             modifier = Modifier
                 .padding(16.dp)
                 .weight(0.2f)
-
         )
 
         Text(
