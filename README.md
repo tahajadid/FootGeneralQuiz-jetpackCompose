@@ -15,6 +15,7 @@ This application was developed using [JetpackCompose](https://developer.android.
 <div>
   <img src="/demo/1.png" width="160" height="300"/>
   <img src="/demo/2.png" width="160" height="300"/>
+  <img src="/demo/3.png" width="160" height="300"/>
 </div>
 
 <div>
