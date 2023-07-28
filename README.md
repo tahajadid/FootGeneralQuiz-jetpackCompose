@@ -11,7 +11,7 @@ Foot General Quizz is a Native Android application to challenge the people in th
 This application was developed using [JetpackCompose](https://developer.android.com/jetpack/compose?hl=fr).
 
 ## Screens
-
+Screens presentation 
 <div>
   <img src="/demo/1.png" width="160" height="300"/>
   <img src="/demo/2.png" width="160" height="300"/>
