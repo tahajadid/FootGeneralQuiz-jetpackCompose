@@ -8,7 +8,7 @@
 
 Foot General Quizz is a Native Android application to challenge the people in their Football knowledge.
 
-This application was developed using [JetpackCompose](https://developer.android.com/jetpack/compose?hl=fr)
+This application was developed using [JetpackCompose](https://developer.android.com/jetpack/compose?hl=fr).
 
 ## Screens
 
@@ -17,7 +17,7 @@ This application was developed using [JetpackCompose](https://developer.android.
   <img src="/demo/2.png" width="160" height="300"/>
   <img src="/demo/3.png" width="160" height="300"/>
 </div>
-
+</br>
 <div>
   <img src="/demo/4.png" width="160" height="300"/>
   <img src="/demo/5.png" width="160" height="300"/>
