@@ -6,9 +6,13 @@ import androidx.activity.compose.BackHandler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedContentScope
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.TweenSpec
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.with
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
@@ -75,22 +79,7 @@ fun SurveyRoute(
         val modifier = Modifier.padding(paddingValues)
 
         AnimatedContent(
-            targetState = surveyScreenData,
-            transitionSpec = {
-                val animationSpec: TweenSpec<IntOffset> =
-                    tween(CONTENT_ANIMATION_DURATION)
-                val direction = getTransitionDirection(
-                    initialIndex = initialState.questionIndex,
-                    targetIndex = targetState.questionIndex
-                )
-                slideIntoContainer(
-                    towards = direction,
-                    animationSpec = animationSpec
-                ) with slideOutOfContainer(
-                    towards = direction,
-                    animationSpec = animationSpec
-                )
-            }
+            targetState = surveyScreenData
         ) { targetState ->
 
             when (targetState.surveyQuestion) {
@@ -141,21 +130,40 @@ fun SurveyRoute(
     }
 }
 
+
 @OptIn(ExperimentalAnimationApi::class)
-private fun getTransitionDirection(
+private fun getTransition(
     initialIndex: Int,
     targetIndex: Int
-): AnimatedContentScope.SlideDirection {
+): EnterTransition {
     return if (targetIndex > initialIndex) {
-        // Going forwards in the survey: Set the initial offset to start
-        // at the size of the content so it slides in from right to left, and
-        // slides out from the left of the screen to -fullWidth
-        AnimatedContentScope.SlideDirection.Left
+        slideInHorizontally(
+            initialOffsetX = { fullWidth -> fullWidth }, // slide in from right
+            animationSpec = tween(300)
+        )
     } else {
-        // Going back to the previous question in the set, we do the same
-        // transition as above, but with different offsets - the inverse of
-        // above, negative fullWidth to enter, and fullWidth to exit.
-        AnimatedContentScope.SlideDirection.Right
+        slideInHorizontally(
+            initialOffsetX = { fullWidth -> -fullWidth }, // slide in from left
+            animationSpec = tween(300)
+        )
+    }
+}
+
+@OptIn(ExperimentalAnimationApi::class)
+private fun getExitTransition(
+    initialIndex: Int,
+    targetIndex: Int
+): ExitTransition {
+    return if (targetIndex > initialIndex) {
+        slideOutHorizontally(
+            targetOffsetX = { fullWidth -> -fullWidth }, // slide out to left
+            animationSpec = tween(300)
+        )
+    } else {
+        slideOutHorizontally(
+            targetOffsetX = { fullWidth -> fullWidth }, // slide out to right
+            animationSpec = tween(300)
+        )
     }
 }
 
