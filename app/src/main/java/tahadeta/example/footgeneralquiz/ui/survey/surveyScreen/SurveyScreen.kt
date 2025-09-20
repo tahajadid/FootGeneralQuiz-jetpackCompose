@@ -116,7 +116,7 @@ fun SurveyTopAppBar(
                     totalQuestionsCount = totalQuestionsCount
                 )
             },
-            colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Green2),
+            colors = TopAppBarDefaults.topAppBarColors(containerColor = Green2),
             actions = {
                 IconButton(
                     onClick = onClosePressed
